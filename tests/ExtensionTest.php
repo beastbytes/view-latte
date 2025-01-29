@@ -22,7 +22,7 @@ final class ExtensionTest extends TestCase
     }
 
     #[Test]
-    public function extension(): void
+    public function getFunctions(): void
     {
         $extension = new LatteExtension($this->container);
         $functionGet = $extension->getFunctions()['get'];

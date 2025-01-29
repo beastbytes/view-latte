@@ -13,11 +13,10 @@ class LatteExtension extends Extension
     {
     }
 
-     public function getFunctions(): array
+    public function getFunctions(): array
     {
         return [
             'get' => fn (string $id): mixed => $this->container->get($id),
         ];
     }
-
 }
