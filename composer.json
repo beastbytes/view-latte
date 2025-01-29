@@ -1,0 +1,34 @@
+{
+  "name": "beastbytes/view-latte",
+  "description": "Yii Framework Latte Template Renderer",
+  "keywords": [
+    "yii",
+    "latte",
+    "renderer"
+  ],
+  "type": "library",
+  "license": "BSD-3-Clause",
+  "require": {
+    "php": "^8.1",
+    "latte/latte": "dev-master",
+    "psr/container": "^2.0",
+    "yiisoft/view": "^12.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^10.0",
+    "vimeo/psalm": "^5.0",
+    "yiisoft/aliases": "^3.0",
+    "yiisoft/psr-dummy-provider": "^1.0",
+    "yiisoft/test-support": "^3.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "BeastBytes\\View\\Latte\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "BeastBytes\\View\\Latte\\Tests\\": "tests/"
+    }
+  }
+}
