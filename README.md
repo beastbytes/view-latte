@@ -68,7 +68,7 @@ it is available in all view templates and layouts.
 #### Basic Layout & View Templates
 
 **Note:**
-* $this in Latte templates is the Latte template engine
+* $this in Latte templates is the Latte template
 * $view is the WebView class
 
 ```latte
