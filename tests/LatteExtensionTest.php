@@ -11,7 +11,7 @@ use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 use Yiisoft\Test\Support\Container\SimpleContainer;
 
-final class ExtensionTest extends TestCase
+final class LatteExtensionTest extends TestCase
 {
     private string|SimpleContainer $container;
 
