@@ -12,10 +12,12 @@ final class LatteFactory
     private const EXCEPTION_MESSAGE = 'Implement the `__invoke()` method in %s provider `%s`';
 
     /**
+     * @param string $cacheDir
      * @param FilterProviderInterface[] $filterProviders
      * @param FunctionProviderInterface[] $functionProviders
      */
     public function __construct(
+        private readonly string $cacheDir,
         private readonly array $filterProviders = [],
         private readonly array $functionProviders = [],
     )
@@ -25,6 +27,7 @@ final class LatteFactory
     public function create(): Engine
     {
         $latte = new Engine();
+        $latte->setTempDirectory($this->cacheDir);
         $latte->setStrictTypes(true);
 
         foreach ($this->filterProviders as $provider) {
