@@ -13,8 +13,8 @@ final class LatteFactory
 
     /**
      * @param string $cacheDir
-     * @param FilterProviderInterface[] $filterProviders
-     * @param FunctionProviderInterface[] $functionProviders
+     * @param FilterProvider[] $filterProviders
+     * @param FunctionProvider[] $functionProviders
      */
     public function __construct(
         private readonly string $cacheDir,
@@ -45,7 +45,7 @@ final class LatteFactory
         return $latte;
     }
 
-    private function validateProvider(ProviderInterface $provider, string $type): bool
+    private function validateProvider(Provider $provider, string $type): bool
     {
         if (method_exists($provider, '__invoke')) {
             return true;
