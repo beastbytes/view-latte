@@ -30,5 +30,13 @@
     "psr-4": {
       "BeastBytes\\View\\Latte\\Tests\\": "tests/"
     }
+  },
+  "extra": {
+    "config-plugin-options": {
+      "source-directory": "config"
+    },
+    "config-plugin": {
+      "di-web": "di-web.php"
+    }
   }
 }
