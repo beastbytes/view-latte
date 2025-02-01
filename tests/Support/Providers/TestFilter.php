@@ -10,7 +10,7 @@ class TestFilter implements FilterProvider
 {
     public function getName(): string
     {
-        return 'test-filter';
+        return 'testFilter';
     }
 
     public function __invoke(string $string): string

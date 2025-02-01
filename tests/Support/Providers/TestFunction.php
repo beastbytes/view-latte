@@ -10,7 +10,7 @@ class TestFunction implements FunctionProvider
 {
     public function getName(): string
     {
-        return 'test-function';
+        return 'testFunction';
     }
 
     public function __invoke(int $number): int
