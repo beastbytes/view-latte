@@ -1,78 +1,103 @@
 This package is an extension of the [Yii View Rendering Library](https://github.com/yiisoft/view/). This extension
 provides a `ViewRender` that allows use of the [Latte](https://latte.nette.org/) view template engine.
 
-## Requirements
+`Latte` has some advantages over `Twig` as a templating engine:
+* The major advantage of Latte is that it is PHP (Twig is Python), this makes writting Latte templates simpler
+and debugging them (if you need to) a lot simpler.
+* Use [PHP expressions in templates](https://latte.nette.org/en/syntax#toc-latte-understands-php) 
+* Better defence against XSS (Cross Site Scripting)
+* Excellent plugin for PhpStorm that enables type hints, code completion, etc.
 
+## Requirements
 - PHP 8.1 or higher.
 
 ## Installation
+Install the package using [Composer](https://getcomposer.org):
 
-The package could be installed with [Composer](https://getcomposer.org):
-
+Either:
 ```shell
 composer require beastbytes/view-latte
 ```
-
-## Usage
-In your application, specify the configuration for `Latte` and override the configuration for `WebView`:
-
-```php
-use BeastBytes\View\Latte\ViewRenderer;
-use BeastBytes\View\Latte\Extension\LatteExtension;
-use Latte\Engine as Latte;
-use Loytyi\ViewRenderer;
-use Psr\Container\ContainerInterface;
-use Psr\EventDispatcher\EventDispatcherInterface;
-use Yiisoft\Aliases\Aliases;
-use Yiisoft\View\WebView;
-
-/** @var array $params */
-
-return [
-    Latte::class => static function (ContainerInterface $container): Latte {
-        $latte = new Latte;
-        $latte->setTempDirectory((string) $container
-            ->get(Aliases::class)
-            ->get('@runtime/cache/latte'))
-        ;
-        $latte->addExtension(new LatteExtension($container));
-
-        return $latte;
-    },
-    WebView::class => static function (ContainerInterface $container) use ($params): WebView {
-        $webView = new WebView(
-            $container
-                ->get(Aliases::class)
-                ->get('@views'),
-            $container->get(EventDispatcherInterface::class),
-        );
-
-        $webView = $webView
-            ->withFallbackExtension('latte')
-            ->withRenderers(['latte' => new ViewRenderer($container->get(Latte::class))])
-        ;
-
-        $webView->setParameters($params['yiisoft/view']['parameters']);
-        return $webView;
-    },
-];
+or add the following to the `require` section of your `composer.json`
+```json
+"beastbytes/view-latte": "*"
 ```
 
-### Template
+## Configuration
+In order to register `Latte` as the renderer in `WebView`, the `beastbytes/view-latte` package must override 
+the `yiisoft\view` package configuration. To do this, add `beastbytes/view-latte` to the `vendor-override-layer`
+option in `config-plugin-options`; this is either in the `extra` section of your root `composer.json`
+or in your external configuration file.
 
-All variables that were in the regular template are also available in the Latte template.
+### composer.json
+```json
+"extra": {
+    "config-plugin-options": {
+        "vendor-override-layer": [
+          "beastbytes/view-latte"
+        ]
+    },
+    "config-plugin": {
+        // ...
+    }
+}
+```
+### External Configuration File
+```php
+'config-plugin-options' => [
+    // other config-plugin-options
+    'vendor-override-layer' => [
+        'beastbytes/view-latte',
+        // other vendor overrides
+    ]    
+],
+```
+_Note:_ if `beastbytes/view-latte` is the only vendor override,
+it can be specified as a string in both of the configuration formats.
 
-The Latte extension provides access to everything defined in the container;
-it is available in all view templates and layouts.
+### Params
+The `beastbytes/view-latte` package supports the addition of user defined filters and functions to `Latte`.
+Each filter and function is defined in its own class. 
+
+To add them to `Latte` specify them in the `filterProviders` and `functionProviders` keys
+of `beastbytes/view-latte` in the `params` array.
+
+```php
+'beastbytes/view-latte' => [
+    'filterProviders' => [
+        new MyLatteFilter()
+    ],
+    'functionProviders' => [
+        new MyLatteFunction()
+    ],
+],
+```
+
+See [User Defined Filters and Functions](#user-defined-filters-and-functions) 
+for details on how to define filters and functions.
+
+## Templates
+As you would expect, all the variables defined when calling the view renderer's `render()` method in an action are
+available in the template, as are injected variables.
+
+The Latte extension provides access to everything defined in the application container 
+in all view templates and layouts.
 
 #### Basic Layout & View Templates
-
-**Note:**
-* $this in Latte templates is the Latte template
-* $view is the WebView class
+**Note:** A major difference between `Latte` and `PHP` templates is the definition of `$this`.
+* `$this` in Latte templates is the Latte template being rendered
+* `$view` is the WebView instance
 
 ```latte
+{varType string $content}
 {varType Yiisoft\View\WebView $view}
+
+{do $assetManager->register('App\Asset\AppAsset')}
+{do $view->addCssFiles($assetManager->getCssFiles())}
+{do $view->addCssStrings($assetManager->getCssStrings())}
+{do $view->addJsFiles($assetManager->getJsFiles())}
+{do $view->addJsStrings($assetManager->getJsStrings())}
+{do $view->addJsVars($assetManager->getJsVars())}
 
 {$view->beginPage()|noescape}
 <!DOCTYPE html>
@@ -107,16 +132,83 @@ And a view template will be:
 
 <h1 class="title">Hello!</h1>
 
-<p class="subtitle">Let's start something great with <strong>Yii3</strong>!</p>
+<p class="subtitle">Let's start something great with <strong>Yii3 &amp; Latte</strong>!</p>
 
 <p class="subtitle is-italic">
     <a href="https://github.com/yiisoft/docs/tree/master/guide/en" target="_blank" rel="noopener">
-        Don't forget to check the guide.
+        Don't forget to check the Yii guide 
     </a>
+    <a href="https://latte.nette.org/en/guide" target="_blank" rel="noopener">
+        and the Latte documentation.
+    </a>    
 </p>
 ```
 
-## License
+## User Defined Filters and Functions
+The `view-latte` package supports the addition of user defined filters and functions to the Latte Engine;
+see [Configuration -> Params](#params) for details on how to specify them. This section details how to define them.
 
+Each filter and/or function is defined in its own class. Filters must implement the FilterProviderinterface
+and functions the FunctionProviderinterface; both **_must_** implement the `__invoke()` method to provide their
+functionality.
+
+### Example Filter
+```php
+<?php
+
+declare(strict_types=1);
+
+namespace App\Latte\Providers;
+
+use BeastBytes\View\Latte\FilterProvider;
+
+class MyLatteFilter implements FilterProvider
+{
+    public function getName(): string
+    {
+        return 'myLatteFilter'; // the name registered with Latte and used to invoke the filter in templates
+    }
+
+    public function __invoke(string $string): string
+    {
+        return strrev($string);
+    }
+}
+```
+
+### Example Function
+```php
+<?php
+
+declare(strict_types=1);
+
+namespace App\Latte\Providers;
+
+use BeastBytes\View\Latte\FunctionProvider;
+
+class MyLatteFunction implements FunctionProvider
+{
+    public function getName(): string
+    {
+        return 'myLatteFunction'; // the name registered with Latte and used to call the function in templates
+    }
+
+    public function __invoke(int $number): int
+    {
+        return $number * 2;
+    }
+}
+```
+
+### Example Template
+```latte
+{var int $x = 2}
+{var string $strig = 'ABCDE'}
+
+<p>{$strig|myLatteFilter}</p> <!-- will output EDCBA -->
+<p>{=myLatteFunction($x)}</p> <!-- will output 4 -->
+```
+
+## License
 The BeastBytes View Latte Renderer is free software. It is released under the terms of the BSD License.
 Please see [`LICENSE`](./LICENSE.md) for more information.
