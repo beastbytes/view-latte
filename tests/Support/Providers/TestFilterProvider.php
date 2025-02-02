@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace BeastBytes\View\Latte\Tests\Support\Providers;
 
-use BeastBytes\View\Latte\FilterProvider;
+use BeastBytes\View\Latte\Provider\FilterProvider;
 
-class TestFilter implements FilterProvider
+class TestFilterProvider implements FilterProvider
 {
     public function getName(): string
     {

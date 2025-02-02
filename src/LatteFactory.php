@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 namespace BeastBytes\View\Latte;
 
+use BeastBytes\View\Latte\Provider\FilterProvider;
+use BeastBytes\View\Latte\Provider\FunctionProvider;
+use BeastBytes\View\Latte\Provider\Provider;
 use Latte\Engine;
 use Latte\RuntimeException;
 

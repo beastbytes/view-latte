@@ -153,6 +153,7 @@ and functions the FunctionProviderinterface; both **_must_** implement the `__in
 functionality.
 
 ### Example Filter
+
 ```php
 <?php
 
@@ -160,7 +161,7 @@ declare(strict_types=1);
 
 namespace App\Latte\Providers;
 
-use BeastBytes\View\Latte\FilterProvider;
+use BeastBytes\View\Latte\Provider\FilterProvider;
 
 class MyLatteFilter implements FilterProvider
 {
@@ -177,6 +178,7 @@ class MyLatteFilter implements FilterProvider
 ```
 
 ### Example Function
+
 ```php
 <?php
 
@@ -184,7 +186,7 @@ declare(strict_types=1);
 
 namespace App\Latte\Providers;
 
-use BeastBytes\View\Latte\FunctionProvider;
+use BeastBytes\View\Latte\Provider\FunctionProvider;
 
 class MyLatteFunction implements FunctionProvider
 {

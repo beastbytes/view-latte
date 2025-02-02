@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace BeastBytes\View\Latte\Tests\Support\Providers;
 
-use BeastBytes\View\Latte\FunctionProvider;
+use BeastBytes\View\Latte\Provider\FunctionProvider;
 
-class TestFunction implements FunctionProvider
+class TestFunctionProvider implements FunctionProvider
 {
     public function getName(): string
     {

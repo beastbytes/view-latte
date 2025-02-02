@@ -3,8 +3,8 @@
 namespace BeastBytes\View\Latte\Tests;
 
 use BeastBytes\View\Latte\LatteFactory;
-use BeastBytes\View\Latte\Tests\Support\Providers\TestFilter;
-use BeastBytes\View\Latte\Tests\Support\Providers\TestFunction;
+use BeastBytes\View\Latte\Tests\Support\Providers\TestFilterProvider;
+use BeastBytes\View\Latte\Tests\Support\Providers\TestFunctionProvider;
 use Latte\Engine;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
@@ -33,8 +33,8 @@ class LatteFactoryTest extends TestCase
     {
         $factory = new LatteFactory(
             $this->cacheDir,
-            [new TestFilter],
-            [new TestFunction],
+            [new TestFilterProvider],
+            [new TestFunctionProvider],
         );
         $latte = $factory->create();
 
@@ -50,8 +50,8 @@ class LatteFactoryTest extends TestCase
     {
         $factory = new LatteFactory(
             $this->cacheDir,
-            [new TestFilter],
-            [new TestFunction],
+            [new TestFilterProvider],
+            [new TestFunctionProvider],
         );
         $latte = $factory->create();
 
