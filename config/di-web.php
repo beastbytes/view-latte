@@ -14,7 +14,7 @@ use Yiisoft\View\WebView;
 /** @var array $params */
 
 return [
-    Latte::class => static function (ContainerInterface $container, array $params): Latte {
+    Latte::class => static function (ContainerInterface $container) use ($params): Latte {
         $latte = (new LatteFactory(
             (string) $container
                 ->get(Aliases::class)
