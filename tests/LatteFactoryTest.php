@@ -8,15 +8,22 @@ use BeastBytes\View\Latte\Tests\Support\Providers\TestFunctionProvider;
 use Latte\Engine;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
+use Yiisoft\Files\FileHelper;
 
 class LatteFactoryTest extends TestCase
 {
-    private string $cacheDir;
+    private string $cacheDir = __DIR__ . '/public/tmp';
 
     protected function setUp(): void
     {
         parent::setUp();
-        $this->cacheDir = __DIR__ . '/public/tmp';
+        FileHelper::ensureDirectory($this->cacheDir);
+    }
+
+    protected function tearDown(): void
+    {
+        parent::tearDown();
+        FileHelper::removeDirectory($this->cacheDir);
     }
 
     #[Test]
