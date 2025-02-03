@@ -56,10 +56,10 @@ _Note:_ if `beastbytes/view-latte` is the only vendor override,
 it can be specified as a string in both of the configuration formats.
 
 ### Params
-The `beastbytes/view-latte` package supports the addition of user defined filters and functions to `Latte`.
-Each filter and function is defined in its own class. 
+The `beastbytes/view-latte` package supports the addition of user defined filters, functions, and extensions to `Latte`.
+Each filter and function is defined in its own class; extensions are packages.
 
-To add them to `Latte` specify them in the `filterProviders` and `functionProviders` keys
+To add them to `Latte` specify them in the `filterProviders`, `functionProviders`, and `extensions` keys
 of `beastbytes/view-latte` in the `params` array.
 
 ```php
@@ -70,11 +70,16 @@ of `beastbytes/view-latte` in the `params` array.
     'functionProviders' => [
         new MyLatteFunction()
     ],
+    'extensions' => [
+        new myLatteExtension()
+    ]
 ],
 ```
 
 See [User Defined Filters and Functions](#user-defined-filters-and-functions) 
 for details on how to define filters and functions.
+
+See [Creating an Extension](https://latte.nette.org/en/creating-extension) for details on how to create an extension.
 
 ## Templates
 As you would expect, all the variables defined when calling the view renderer's `render()` method in an action are
