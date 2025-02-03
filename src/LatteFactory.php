@@ -23,6 +23,7 @@ final class LatteFactory
         private readonly string $cacheDir,
         private readonly array $filterProviders = [],
         private readonly array $functionProviders = [],
+        private readonly array $extensions = [],
     )
     {
     }
@@ -43,6 +44,10 @@ final class LatteFactory
             if ($this->validateProvider($provider, 'function')) {
                 $latte->addFunction($provider->getName(), $provider);
             }
+        }
+
+        foreach ($this->extensions as $extension) {
+            $latte->addExtension($extension);
         }
 
         return $latte;
