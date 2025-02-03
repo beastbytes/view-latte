@@ -22,10 +22,10 @@ return [
             ,
             $params['beastbytes/view-latte']['filterProviders'],
             $params['beastbytes/view-latte']['functionProviders'],
+            array_merge($params['beastbytes/view-latte']['extensions'], [new LatteExtension($container)])
         ))
             ->create()
         ;
-        $latte->addExtension(new LatteExtension($container));
 
         return $latte;
     },

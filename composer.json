@@ -7,11 +7,14 @@
     "renderer"
   ],
   "type": "library",
+  "minimum-stability": "dev",
+  "prefer-stable": true,
   "license": "BSD-3-Clause",
   "require": {
     "php": "^8.1",
     "latte/latte": "dev-master",
     "psr/container": "^2.0",
+    "yiisoft/form-model": "^1.0",
     "yiisoft/view": "10 - 12"
   },
   "require-dev": {
