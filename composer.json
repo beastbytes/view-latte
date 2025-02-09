@@ -42,5 +42,8 @@
       "di-web": "di-web.php",
       "params-web": "params-web.php"
     }
+  },
+  "suggest": {
+    "beastbytes/view-latte-forn": "Integrates the Yii Framework Form package simplifing form creation"
   }
 }
