@@ -6,6 +6,7 @@ use BeastBytes\View\Latte\Extension\LatteExtension;
 use BeastBytes\View\Latte\LatteFactory;
 use BeastBytes\View\Latte\ViewRenderer;
 use Latte\Engine as Latte;
+use Latte\Essential\TranslatorExtension;
 use Psr\Container\ContainerInterface;
 use Psr\EventDispatcher\EventDispatcherInterface;
 use Yiisoft\Aliases\Aliases;
@@ -15,6 +16,15 @@ use Yiisoft\View\WebView;
 
 return [
     Latte::class => static function (ContainerInterface $container) use ($params): Latte {
+        $extensions = $params['beastbytes/view-latte']['extensions'];
+        $extensions[] = new LatteExtension($container);
+
+        if ($container->has(\Yiisoft\Translator\TranslatorInterface::class)) {
+            $extensions[] = new TranslatorExtension(
+                [$container->get(\Yiisoft\Translator\TranslatorInterface::class), 'translate']
+            );
+        }
+
         $latte = (new LatteFactory(
             (string) $container
                 ->get(Aliases::class)
@@ -22,7 +32,7 @@ return [
             ,
             $params['beastbytes/view-latte']['filterProviders'],
             $params['beastbytes/view-latte']['functionProviders'],
-            array_merge($params['beastbytes/view-latte']['extensions'], [new LatteExtension($container)])
+            $extensions
         ))
             ->create()
         ;

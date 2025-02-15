@@ -2,7 +2,7 @@ This package is an extension of the [Yii View Rendering Library](https://github.
 provides a `ViewRender` that allows use of the [Latte](https://latte.nette.org/) view template engine.
 
 `Latte` has some advantages over `Twig` as a templating engine:
-* The major advantage of Latte is that it is PHP (Twig is Python), this makes writting Latte templates simpler
+* The major advantage of Latte is that it is PHP (Twig is Python), this makes writing Latte templates simpler
 and debugging them (if you need to) a lot simpler.
 * Use [PHP expressions in templates](https://latte.nette.org/en/syntax#toc-latte-understands-php) 
 * Better defence against XSS (Cross Site Scripting)
@@ -148,6 +148,19 @@ And a view template will be:
     </a>    
 </p>
 ```
+
+## Extensions
+### DI Container
+The `view-latte` package adds an extension that allows access to any package in the DI container;
+it defines the `get` function.
+
+```latte
+{do $package = get('PackageId')}
+```
+
+### Translator
+If the DI container contains a `Yiisoft\Translator\TranslatorInterface` implementation, Latte's Translation Extension is
+added, allowing use of the `{_...}` tag in templates.
 
 ## User Defined Filters and Functions
 The `view-latte` package supports the addition of user defined filters and functions to the Latte Engine;
