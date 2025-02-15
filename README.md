@@ -151,8 +151,8 @@ And a view template will be:
 
 ## Extensions
 ### DI Container
-The `view-latte` package adds an extension that allows access to any package in the DI container;
-it defines the `get` function.
+The `view-latte` package adds the `LatteExtension` that allows access to any package in the DI container;
+it defines the `get` function which takes the id of the required package as a parameter.
 
 ```latte
 {do $package = get('PackageId')}
@@ -160,7 +160,40 @@ it defines the `get` function.
 
 ### Translator
 If the DI container contains a `Yiisoft\Translator\TranslatorInterface` implementation, Latte's Translation Extension is
-added, allowing use of the `{_...}` tag in templates.
+added, allowing use of Latte's Translation [tags](https://latte.nette.org/en/tags#toc-translation)
+and [filter](https://latte.nette.org/en/filters#toc-translate) in templates.
+
+### URL Generator
+If the DI container contains a `Yiisoft\Router\UrlGeneratorInterface` implementation, `view-latte`
+adds the `UrlGeneratorExtension` which provides tags and a filter to generate URLs.
+
+#### Filter
+**link (...$args)**
+
+Generates a URL from the arguments;
+the arguments are the same as for `Yiisoft\Translator\TranslatorInterface::generate()`
+```latte
+<p>{='route-name'|link}</p>
+<p>{$routeName|link}</p>
+```
+
+#### Tags
+{h ...}
+
+Generates a URL
+```latte
+<a href="{h 'route-name'}">Text</a>
+<a href="{h 'route-name' arguments: $args}">Text</a>
+```
+
+{link}
+
+Generates a URL from the arguments;
+the arguments are the same as for `Yiisoft\Translator\TranslatorInterface::generate()`
+```latte
+<p>{link}'route-name'{/link}</p>
+<p>{link arguments: $args}'route-name'{/link}</p>
+```
 
 ## User Defined Filters and Functions
 The `view-latte` package supports the addition of user defined filters and functions to the Latte Engine;

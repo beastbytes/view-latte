@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 use BeastBytes\View\Latte\Extension\LatteExtension;
+use BeastBytes\View\Latte\Extension\UrlGeneratorExtension;
 use BeastBytes\View\Latte\LatteFactory;
 use BeastBytes\View\Latte\ViewRenderer;
 use Latte\Engine as Latte;
@@ -22,6 +23,12 @@ return [
         if ($container->has(\Yiisoft\Translator\TranslatorInterface::class)) {
             $extensions[] = new TranslatorExtension(
                 [$container->get(\Yiisoft\Translator\TranslatorInterface::class), 'translate']
+            );
+        }
+
+        if ($container->has(\Yiisoft\Router\UrlGeneratorInterface::class)) {
+            $extensions[] = new UrlGeneratorExtension(
+                [$container->get(\Yiisoft\Router\UrlGeneratorInterface::class), 'generate']
             );
         }
 
