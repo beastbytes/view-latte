@@ -26,7 +26,7 @@ class UrlGeneratorExtension extends Extension
         private ?string $key = null,
     ) {
         if ($generator instanceof UrlGeneratorInterface) {
-            $this->$generator = [$generator, 'generate'];
+            $this->generator = [$generator, 'generate'];
         } else {
             $this->generator = $generator;
         }

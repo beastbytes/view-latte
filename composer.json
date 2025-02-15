@@ -23,6 +23,7 @@
     "vimeo/psalm": "^5.0",
     "yiisoft/aliases": "^3.0",
     "yiisoft/dummy-provider": "^1.0",
+    "yiisoft/router-fastroute": "3.0",
     "yiisoft/psr-dummy-provider": "^1.0",
     "yiisoft/test-support": "^3.0"
   },

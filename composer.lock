@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a0c4bc4399324f0e4325a9dcae71b40e",
+    "content-hash": "2e1779ba2dbd7653aab6599878b27236",
     "packages": [
         {
             "name": "latte/latte",
@@ -92,6 +92,56 @@
                 "source": "https://github.com/nette/latte/tree/master"
             },
             "time": "2025-01-16T04:47:08+00:00"
+        },
+        {
+            "name": "nikic/fast-route",
+            "version": "v1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nikic/FastRoute.git",
+                "reference": "181d480e08d9476e61381e04a71b34dc0432e812"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nikic/FastRoute/zipball/181d480e08d9476e61381e04a71b34dc0432e812",
+                "reference": "181d480e08d9476e61381e04a71b34dc0432e812",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8.35|~5.7"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/functions.php"
+                ],
+                "psr-4": {
+                    "FastRoute\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Nikita Popov",
+                    "email": "nikic@php.net"
+                }
+            ],
+            "description": "Fast request router for PHP",
+            "keywords": [
+                "router",
+                "routing"
+            ],
+            "support": {
+                "issues": "https://github.com/nikic/FastRoute/issues",
+                "source": "https://github.com/nikic/FastRoute/tree/master"
+            },
+            "time": "2018-02-13T20:26:39+00:00"
         },
         {
             "name": "psr/container",
@@ -253,16 +303,16 @@
         },
         {
             "name": "psr/http-message",
-            "version": "2.0",
+            "version": "1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/http-message.git",
-                "reference": "402d35bcb92c70c026d1a6a9883f06b2ead23d71"
+                "reference": "cb6ce4845ce34a8ad9e68117c10ee90a29919eba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/http-message/zipball/402d35bcb92c70c026d1a6a9883f06b2ead23d71",
-                "reference": "402d35bcb92c70c026d1a6a9883f06b2ead23d71",
+                "url": "https://api.github.com/repos/php-fig/http-message/zipball/cb6ce4845ce34a8ad9e68117c10ee90a29919eba",
+                "reference": "cb6ce4845ce34a8ad9e68117c10ee90a29919eba",
                 "shasum": ""
             },
             "require": {
@@ -271,7 +321,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.0.x-dev"
+                    "dev-master": "1.1.x-dev"
                 }
             },
             "autoload": {
@@ -286,7 +336,7 @@
             "authors": [
                 {
                     "name": "PHP-FIG",
-                    "homepage": "https://www.php-fig.org/"
+                    "homepage": "http://www.php-fig.org/"
                 }
             ],
             "description": "Common interface for HTTP messages",
@@ -300,9 +350,9 @@
                 "response"
             ],
             "support": {
-                "source": "https://github.com/php-fig/http-message/tree/2.0"
+                "source": "https://github.com/php-fig/http-message/tree/1.1"
             },
-            "time": "2023-04-04T09:54:51+00:00"
+            "time": "2023-04-04T09:50:52+00:00"
         },
         {
             "name": "psr/http-server-handler",
@@ -684,60 +734,6 @@
                 }
             ],
             "time": "2024-12-16T19:52:30+00:00"
-        },
-        {
-            "name": "yiisoft/dummy-provider",
-            "version": "1.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/yiisoft/dummy-provider.git",
-                "reference": "a1a4306a50d7f4f74c7ff1850c5f1a8d64b5e470"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/dummy-provider/zipball/a1a4306a50d7f4f74c7ff1850c5f1a8d64b5e470",
-                "reference": "a1a4306a50d7f4f74c7ff1850c5f1a8d64b5e470",
-                "shasum": ""
-            },
-            "provide": {
-                "yiisoft/router-implementation": "1.0.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "3.0.x-dev"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "description": "Yii Dummy Provider",
-            "homepage": "https://www.yiiframework.com/",
-            "keywords": [
-                "Dummy",
-                "provider",
-                "provides",
-                "testing"
-            ],
-            "support": {
-                "forum": "https://www.yiiframework.com/forum/",
-                "irc": "irc://irc.freenode.net/yii",
-                "issues": "https://github.com/yiisoft/dummy-provider/issues?state=open",
-                "source": "https://github.com/yiisoft/dummy-provider",
-                "wiki": "https://www.yiiframework.com/wiki/"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/yiisoft",
-                    "type": "github"
-                },
-                {
-                    "url": "https://opencollective.com/yiisoft",
-                    "type": "open_collective"
-                }
-            ],
-            "time": "2024-02-05T12:33:40+00:00"
         },
         {
             "name": "yiisoft/factory",
@@ -1687,6 +1683,88 @@
                 }
             ],
             "time": "2024-02-20T11:39:48+00:00"
+        },
+        {
+            "name": "yiisoft/router-fastroute",
+            "version": "3.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yiisoft/router-fastroute.git",
+                "reference": "2a570aa9d99743bee69faf34c9b712b6d7dd2941"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yiisoft/router-fastroute/zipball/2a570aa9d99743bee69faf34c9b712b6d7dd2941",
+                "reference": "2a570aa9d99743bee69faf34c9b712b6d7dd2941",
+                "shasum": ""
+            },
+            "require": {
+                "nikic/fast-route": "^1.3",
+                "php": "^8.0",
+                "psr/http-message": "^1.0",
+                "psr/simple-cache": "^2.0|^3.0",
+                "yiisoft/http": "^1.2",
+                "yiisoft/router": "^2.1|^3.0"
+            },
+            "provide": {
+                "yiisoft/router-implementation": "1.0.0"
+            },
+            "require-dev": {
+                "maglnet/composer-require-checker": "^4.2",
+                "nyholm/psr7": "^1.4",
+                "phpunit/phpunit": "^9.5",
+                "psr/container": "^2.0",
+                "rector/rector": "^0.15.4",
+                "roave/infection-static-analysis-plugin": "^1.16",
+                "spatie/phpunit-watcher": "^1.23",
+                "vimeo/psalm": "^4.30|^5.6",
+                "yiisoft/di": "^1.2"
+            },
+            "type": "library",
+            "extra": {
+                "config-plugin": {
+                    "di": "di.php",
+                    "di-web": "di-web.php",
+                    "params": "params.php"
+                },
+                "config-plugin-options": {
+                    "source-directory": "config"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Yiisoft\\Router\\FastRoute\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "Yii router FastRoute adapter",
+            "homepage": "https://www.yiiframework.com/",
+            "keywords": [
+                "FastRoute",
+                "router"
+            ],
+            "support": {
+                "chat": "https://t.me/yii3en",
+                "forum": "https://www.yiiframework.com/forum/",
+                "irc": "irc://irc.freenode.net/yii",
+                "issues": "https://github.com/yiisoft/router-fastroute/issues?state=open",
+                "source": "https://github.com/yiisoft/router-fastroute",
+                "wiki": "https://www.yiiframework.com/wiki/"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/yiisoft",
+                    "type": "github"
+                },
+                {
+                    "url": "https://opencollective.com/yiisoft",
+                    "type": "open_collective"
+                }
+            ],
+            "time": "2023-02-17T15:08:52+00:00"
         },
         {
             "name": "yiisoft/strings",
@@ -5675,6 +5753,60 @@
                 }
             ],
             "time": "2023-02-13T10:14:03+00:00"
+        },
+        {
+            "name": "yiisoft/dummy-provider",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yiisoft/dummy-provider.git",
+                "reference": "a1a4306a50d7f4f74c7ff1850c5f1a8d64b5e470"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yiisoft/dummy-provider/zipball/a1a4306a50d7f4f74c7ff1850c5f1a8d64b5e470",
+                "reference": "a1a4306a50d7f4f74c7ff1850c5f1a8d64b5e470",
+                "shasum": ""
+            },
+            "provide": {
+                "yiisoft/router-implementation": "1.0.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.0.x-dev"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "Yii Dummy Provider",
+            "homepage": "https://www.yiiframework.com/",
+            "keywords": [
+                "Dummy",
+                "provider",
+                "provides",
+                "testing"
+            ],
+            "support": {
+                "forum": "https://www.yiiframework.com/forum/",
+                "irc": "irc://irc.freenode.net/yii",
+                "issues": "https://github.com/yiisoft/dummy-provider/issues?state=open",
+                "source": "https://github.com/yiisoft/dummy-provider",
+                "wiki": "https://www.yiiframework.com/wiki/"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/yiisoft",
+                    "type": "github"
+                },
+                {
+                    "url": "https://opencollective.com/yiisoft",
+                    "type": "open_collective"
+                }
+            ],
+            "time": "2024-02-05T12:33:40+00:00"
         },
         {
             "name": "yiisoft/psr-dummy-provider",
