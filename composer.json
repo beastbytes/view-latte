@@ -2,7 +2,7 @@
   "name": "beastbytes/view-latte",
   "description": "Yii Framework Latte Template Renderer",
   "keywords": [
-    "yii",
+    "yii3",
     "latte",
     "renderer"
   ],
@@ -47,7 +47,7 @@
     }
   },
   "suggest": {
-    "beastbytes/view-latte-forn": "Integrates the Yii Framework Form package simplifing form creation"
+    "beastbytes/view-latte-forn": "Integrates the Yii Framework Form package simplifing form creation",
     "beastbytes/yii-tracy": "Integrates the Tracy Debugging tool with Yii. Add the Tracy extension to Latte"
   }
 }
