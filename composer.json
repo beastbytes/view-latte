@@ -15,7 +15,7 @@
     "latte/latte": "dev-master",
     "psr/container": "^2.0",
     "yiisoft/form-model": "^1.0",
-    "yiisoft/router": "^3.0",
+    "yiisoft/router": "^4.0",
     "yiisoft/view": "10 - 12"
   },
   "require-dev": {
