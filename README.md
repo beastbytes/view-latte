@@ -149,50 +149,72 @@ And a view template will be:
 </p>
 ```
 
-## Extensions
-### DI Container
-The `view-latte` package adds the `LatteExtension` that allows access to any package in the DI container;
+## View-Latte Extensions
+The `view-latte` package contains the following extensions:
+
+### YiiLatteExtension
+`YiiLatteExtension` allows access to any package in the DI container;
 it defines the `get` function which takes the id of the required package as a parameter.
 
 ```latte
 {do $package = get('PackageId')}
 ```
 
-### Translator
-If the DI container contains a `Yiisoft\Translator\TranslatorInterface` implementation, Latte's Translation Extension is
-added, allowing use of Latte's Translation [tags](https://latte.nette.org/en/tags#toc-translation)
+#### Status
+`YiiLatteExtension` is always enabled.
+
+### CacheExtension
+`CacheExtension` allows caching of view fragments and dynamic content within cached fragments;
+it defines the `cache` and `dynamic` tags.
+
+#### TODO
+describe how these are used
+
+#### Status
+`CacheExtension` is enabled if the DI container contains a `Yiisoft\Cache\CacheInterface` implementation.
+
+### LinkExtension
+`LinkExtension` allows generation of URL using routes; provides an n:attribute and a tag to generate URLs.
+
+#### n:href Attribute
+The `n:href` attribute is used to generate URLs in `<a/>` tags;
+its parameters are the same as `Yiisoft\Router\UrlGeneratorInterface::generate().
+```latte
+<a n:href="route/name, arguments, queryParameters">Content</a>
+```
+
+#### {link} Tag
+The `{link}` tag is used to print a URL;
+its parameters are the same as `Yiisoft\Router\UrlGeneratorInterface::generate().
+```latte
+{link route/name, arguments, queryParameters}
+```
+
+#### Status
+`LinkExtension` is enabled if the DI container contains a `Yiisoft\Router\UrlGeneratorInterface` implementation.
+
+## Other Extensions
+
+### TranslatorExtension
+Latte's Translation Extension is enabled if 
+the DI container contains a `Yiisoft\Translator\TranslatorInterface` implementation, 
+allowing use of Latte's Translation [tags](https://latte.nette.org/en/tags#toc-translation)
 and [filter](https://latte.nette.org/en/filters#toc-translate) in templates.
 
-### URL Generator
-If the DI container contains a `Yiisoft\Router\UrlGeneratorInterface` implementation, `view-latte`
-adds the `UrlGeneratorExtension` which provides tags and a filter to generate URLs.
+### RawPhpExtension
+Latte's `RawPhpExtension` is _not_ enabled by default. To enable it, add it to the `extensions` section
+of the `beastbytes/view-latte` in your configuration parameters:
 
-#### Filter
-**link (...$args)**
-
-Generates a URL from the arguments;
-the arguments are the same as for `Yiisoft\Translator\TranslatorInterface::generate()`
-```latte
-<p>{='route-name'|link}</p>
-<p>{$routeName|link}</p>
-```
-
-#### Tags
-{h ...}
-
-Generates a URL
-```latte
-<a href="{h 'route-name'}">Text</a>
-<a href="{h 'route-name' arguments: $args}">Text</a>
-```
-
-{link}
-
-Generates a URL from the arguments;
-the arguments are the same as for `Yiisoft\Translator\TranslatorInterface::generate()`
-```latte
-<p>{link}'route-name'{/link}</p>
-<p>{link arguments: $args}'route-name'{/link}</p>
+```php
+return [
+    'beastbytes/view-latte' => [
+        'extensions' => [
+            new \Latte\Essential\RawPhpExtension(),
+            // Other extensions
+        ],
+        // Other view-latte configuration
+    ],
+]
 ```
 
 ## User Defined Filters and Functions
