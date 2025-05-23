@@ -2,8 +2,9 @@
 
 declare(strict_types=1);
 
-use BeastBytes\View\Latte\Extension\LatteExtension;
-use BeastBytes\View\Latte\Extension\UrlGeneratorExtension;
+use BeastBytes\View\Latte\Extensions\Cache\CacheExtension;
+use BeastBytes\View\Latte\Extensions\Link\LinkExtension;
+use BeastBytes\View\Latte\Extensions\YiiLatte\YiiLatteExtension;
 use BeastBytes\View\Latte\LatteFactory;
 use BeastBytes\View\Latte\ViewRenderer;
 use Latte\Engine as Latte;
@@ -11,6 +12,9 @@ use Latte\Essential\TranslatorExtension;
 use Psr\Container\ContainerInterface;
 use Psr\EventDispatcher\EventDispatcherInterface;
 use Yiisoft\Aliases\Aliases;
+use Yiisoft\Cache\CacheInterface;
+use Yiisoft\Router\UrlGeneratorInterface;
+use Yiisoft\Translator\TranslatorInterface;
 use Yiisoft\View\WebView;
 
 /** @var array $params */
@@ -18,18 +22,20 @@ use Yiisoft\View\WebView;
 return [
     Latte::class => static function (ContainerInterface $container) use ($params): Latte {
         $extensions = $params['beastbytes/view-latte']['extensions'];
-        $extensions[] = new LatteExtension($container);
+        $extensions[] = new YiiLatteExtension($container);
 
-        if ($container->has(\Yiisoft\Translator\TranslatorInterface::class)) {
+        if ($container->has(TranslatorInterface::class)) {
             $extensions[] = new TranslatorExtension(
-                [$container->get(\Yiisoft\Translator\TranslatorInterface::class), 'translate']
+                [$container->get(TranslatorInterface::class), 'translate']
             );
         }
 
-        if ($container->has(\Yiisoft\Router\UrlGeneratorInterface::class)) {
-            $extensions[] = new UrlGeneratorExtension(
-                [$container->get(\Yiisoft\Router\UrlGeneratorInterface::class), 'generate']
-            );
+        if ($container->has(UrlGeneratorInterface::class)) {
+            $extensions[] = new LinkExtension();
+        }
+
+        if ($this->container->has(CacheInterface::class)) {
+            $extensions[] = new CacheExtension();
         }
 
         $latte = (new LatteFactory(
