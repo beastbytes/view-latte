@@ -2,14 +2,13 @@
 
 declare(strict_types=1);
 
-namespace BeastBytes\View\Latte\Extension;
+namespace BeastBytes\View\Latte\Extensions\YiiLatte;
 
-use Latte\Extension;
 use Psr\Container\ContainerInterface;
 
-class LatteExtension extends Extension
+final class YiiLatteExtension
 {
-    public function __construct(private ContainerInterface $container)
+    public function __construct(private readonly ContainerInterface $container)
     {
     }
 
