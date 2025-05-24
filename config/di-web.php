@@ -31,11 +31,11 @@ return [
         }
 
         if ($container->has(UrlGeneratorInterface::class)) {
-            $extensions[] = new LinkExtension();
+            $extensions[] = new LinkExtension($container->get(UrlGeneratorInterface::class));
         }
 
         if ($this->container->has(CacheInterface::class)) {
-            $extensions[] = new CacheExtension();
+            $extensions[] = new CacheExtension($container->get(CacheInterface::class));
         }
 
         $latte = (new LatteFactory(
