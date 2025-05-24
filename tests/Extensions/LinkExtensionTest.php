@@ -123,7 +123,7 @@ final class LinkExtensionTest extends TestCase
             $routeName,
             rtrim($arguments, ', ')
         );
-        $templateFile = self::TEMPLATE_DIR . DIRECTORY_SEPARATOR . '_' . md5($template) . '.latte';
+        $templateFile = self::LATTE_TEMPLATE_DIR . DIRECTORY_SEPARATOR . '_' . md5($template) . '.latte';
 
         file_put_contents($templateFile, $template);
 
