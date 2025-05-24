@@ -12,8 +12,8 @@ use Yiisoft\Files\FileHelper;
 
 abstract class TestCase extends \PHPUnit\Framework\TestCase
 {
-    protected const CACHE_DIR = __DIR__ . '/generated/cache';
-    protected const TEMPLATE_DIR = __DIR__ . '/generated/template';
+    protected const LATTE_TEMPLATE_DIR = __DIR__ . '/generated/latte/template';
+    private const LATTE_CACHE_DIR = __DIR__ . '/generated/latte/cache';
 
     protected static array $extensions = [];
     protected static Engine $latte;
@@ -21,11 +21,11 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
     #[BeforeClass]
     public static function beforeClass(): void
     {
-        FileHelper::ensureDirectory(self::CACHE_DIR);
-        FileHelper::ensureDirectory(self::TEMPLATE_DIR);
+        FileHelper::ensureDirectory(self::LATTE_CACHE_DIR);
+        FileHelper::ensureDirectory(self::LATTE_TEMPLATE_DIR);
 
         $factory = new LatteFactory(
-            self::CACHE_DIR,
+            self::LATTE_CACHE_DIR,
             extensions: self::$extensions
         );
         self::$latte = $factory->create();
@@ -34,7 +34,7 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
     #[AfterClass]
     public static function afterClass(): void
     {
-        FileHelper::removeDirectory(self::CACHE_DIR);
-        FileHelper::removeDirectory(self::TEMPLATE_DIR);
+        FileHelper::removeDirectory(self::LATTE_CACHE_DIR);
+        FileHelper::removeDirectory(self::LATTE_TEMPLATE_DIR);
     }
 }
