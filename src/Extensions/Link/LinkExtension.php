@@ -17,15 +17,6 @@ final class LinkExtension extends Extension
     {
     }
 
-    /*
-    public function getFunctions(): array
-    {
-        return [
-            'link' => ''
-        ];
-    }
-*/
-
     public function getTags(): array
     {
         return [
