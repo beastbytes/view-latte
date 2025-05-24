@@ -29,6 +29,7 @@ final class LinkExtension extends Extension
     public function getTags(): array
     {
         return [
+            'n:action' => [$this, 'parseLink'],
             'n:href' => [$this, 'parseLink'],
             'link' => [$this, 'parseLink'],
         ];
