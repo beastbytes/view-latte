@@ -9,12 +9,16 @@ use Latte\Compiler\Nodes\AuxiliaryNode;
 use Latte\Compiler\Nodes\TemplateNode;
 use Latte\Compiler\Tag;
 use Latte\Engine;
-use Psr\Container\ContainerInterface;
-use Yiisoft\Cache\CacheInterface;
-use Yiisoft\Router\UrlGeneratorInterface;
+use Latte\Extension;
 
-final class CacheExtension
+final class CacheExtension extends Extension
 {
+    private bool $used;
+
+    public function __construct(private readonly CacheInterface $cache)
+    {
+    }
+
     public function beforeCompile(Engine $engine): void
     {
         $this->used = false;
