@@ -60,6 +60,18 @@ final class LinkExtensionTest extends TestCase
 
     #[Test]
     #[DataProvider('routeProvider')]
+    public function n_action_attribute(string $name, array $arguments): void
+    {
+        $expected = sprintf(
+            '<form action="%s">',
+            self::$urlGenerator->generate($name, $arguments)
+        );
+        $template = '<form n:action="%s, [%s]">';
+        $this->assert($expected, $template, $name, $arguments);
+    }
+
+    #[Test]
+    #[DataProvider('routeProvider')]
     public function n_href_attribute(string $name, array $arguments): void
     {
         $expected = sprintf(

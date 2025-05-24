@@ -44,7 +44,7 @@ final class LinkExtension extends Extension
         $values = self::toValue($args);
 
         if ($tag->isNAttribute()) {
-            $url = ' href="' . $this->urlGenerator->generate($expr, ...$values) . '"';
+            $url = ' ' . $tag->name . '="' . $this->urlGenerator->generate($expr, ...$values) . '"';
         } else {
             $url = $this->urlGenerator->generateAbsolute($expr, ...$values);
         }
