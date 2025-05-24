@@ -22,7 +22,7 @@ use function str_replace;
  */
 final class ViewRenderer implements TemplateRendererInterface
 {
-    public function __construct(private Latte $latte)
+    public function __construct(private readonly Latte $latte)
     {
     }
 
