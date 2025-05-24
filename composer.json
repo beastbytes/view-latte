@@ -48,7 +48,8 @@
     }
   },
   "suggest": {
-    "beastbytes/view-latte-forn": "Integrates the Yii Framework Form package simplifing form creation",
+    "beastbytes/forn-latte": "Integrates the Yii Framework Form package simplifing form creation",
+    "beastbytes/yii-dataview-latte": "Integrates the Yii Framework DataView package with view-latte Latte Template Renderer",
     "beastbytes/yii-tracy": "Integrates the Tracy Debugging tool with Yii. Add the Tracy extension to Latte"
   }
 }
