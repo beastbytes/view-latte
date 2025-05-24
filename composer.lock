@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2e1779ba2dbd7653aab6599878b27236",
+    "content-hash": "39d095cee11b046bb47208454b983083",
     "packages": [
         {
             "name": "latte/latte",
@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/latte.git",
-                "reference": "4db7de13944e50cddfa0963a0783570031e4b991"
+                "reference": "9302610109836aeb2e540cf2e457414e52597789"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/latte/zipball/4db7de13944e50cddfa0963a0783570031e4b991",
-                "reference": "4db7de13944e50cddfa0963a0783570031e4b991",
+                "url": "https://api.github.com/repos/nette/latte/zipball/9302610109836aeb2e540cf2e457414e52597789",
+                "reference": "9302610109836aeb2e540cf2e457414e52597789",
                 "shasum": ""
             },
             "require": {
@@ -89,9 +89,9 @@
             ],
             "support": {
                 "issues": "https://github.com/nette/latte/issues",
-                "source": "https://github.com/nette/latte/tree/master"
+                "source": "https://github.com/nette/latte/tree/v3.0.21"
             },
-            "time": "2025-01-16T04:47:08+00:00"
+            "time": "2025-05-17T05:59:24+00:00"
         },
         {
             "name": "nikic/fast-route",
@@ -675,30 +675,31 @@
         },
         {
             "name": "yiisoft/definitions",
-            "version": "3.3.1",
+            "version": "3.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/definitions.git",
-                "reference": "712d9cfbb0b9e2c88be5271e9b1619720d323bff"
+                "reference": "313dc892dfe1ad03be20ea7181d1c0a845023d98"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/definitions/zipball/712d9cfbb0b9e2c88be5271e9b1619720d323bff",
-                "reference": "712d9cfbb0b9e2c88be5271e9b1619720d323bff",
+                "url": "https://api.github.com/repos/yiisoft/definitions/zipball/313dc892dfe1ad03be20ea7181d1c0a845023d98",
+                "reference": "313dc892dfe1ad03be20ea7181d1c0a845023d98",
                 "shasum": ""
             },
             "require": {
-                "php": "^8.0",
-                "psr/container": "^1.0|^2.0"
+                "php": "~8.1.0 || ~8.2.0 || ~8.3.0 || ~8.4.0",
+                "psr/container": "^1.0 || ^2.0"
             },
             "require-dev": {
-                "maglnet/composer-require-checker": "^4.2",
-                "phpunit/phpunit": "^9.5",
-                "rector/rector": "^1.0.0",
-                "roave/infection-static-analysis-plugin": "^1.18",
-                "spatie/phpunit-watcher": "^1.23",
-                "vimeo/psalm": "^4.30|^5.21",
-                "yiisoft/test-support": "^1.4"
+                "friendsofphp/php-cs-fixer": "^3.69",
+                "maglnet/composer-require-checker": "^4.7.1",
+                "phpunit/phpunit": "^10.5.45",
+                "rector/rector": "^2.0.9",
+                "roave/infection-static-analysis-plugin": "^1.35",
+                "spatie/phpunit-watcher": "^1.24",
+                "vimeo/psalm": "^5.26.1 || ^6.7.1",
+                "yiisoft/test-support": "^3.0.1"
             },
             "type": "library",
             "autoload": {
@@ -733,7 +734,7 @@
                     "type": "opencollective"
                 }
             ],
-            "time": "2024-12-16T19:52:30+00:00"
+            "time": "2025-03-02T16:55:21+00:00"
         },
         {
             "name": "yiisoft/factory",
@@ -860,31 +861,31 @@
         },
         {
             "name": "yiisoft/form",
-            "version": "1.3.0",
+            "version": "1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/form.git",
-                "reference": "cff8e998bda52c00f2eb8746f52c1efabf03414b"
+                "reference": "3d7a887b481e80388253e91bd7f435efedcc8fc8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/form/zipball/cff8e998bda52c00f2eb8746f52c1efabf03414b",
-                "reference": "cff8e998bda52c00f2eb8746f52c1efabf03414b",
+                "url": "https://api.github.com/repos/yiisoft/form/zipball/3d7a887b481e80388253e91bd7f435efedcc8fc8",
+                "reference": "3d7a887b481e80388253e91bd7f435efedcc8fc8",
                 "shasum": ""
             },
             "require": {
-                "php": "^8.1",
+                "php": "8.1 - 8.4",
                 "yiisoft/friendly-exception": "^1.0",
                 "yiisoft/html": "^3.8",
                 "yiisoft/widget": "^2.2"
             },
             "require-dev": {
-                "infection/infection": "^0.26.19",
-                "maglnet/composer-require-checker": "^4.7",
-                "phpunit/phpunit": "^10.5",
-                "rector/rector": "^1.2",
-                "spatie/phpunit-watcher": "^1.23",
-                "vimeo/psalm": "^5.21"
+                "infection/infection": "^0.26.21 || ^0.29.14",
+                "maglnet/composer-require-checker": "^4.7.1",
+                "phpunit/phpunit": "^10.5.45",
+                "rector/rector": "^2.0.10",
+                "spatie/phpunit-watcher": "^1.24",
+                "vimeo/psalm": "^5.26.1 || ^6.9.4"
             },
             "type": "library",
             "extra": {
@@ -929,7 +930,7 @@
                     "type": "open_collective"
                 }
             ],
-            "time": "2024-10-30T07:57:06+00:00"
+            "time": "2025-03-27T12:12:06+00:00"
         },
         {
             "name": "yiisoft/form-model",
@@ -1071,30 +1072,30 @@
         },
         {
             "name": "yiisoft/html",
-            "version": "3.9.0",
+            "version": "3.10.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/html.git",
-                "reference": "037b1251e6344d98211220fb97076ebe65c13e70"
+                "reference": "c8d38e11f7b6e849ec7b17fa52b324d2c114b37b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/html/zipball/037b1251e6344d98211220fb97076ebe65c13e70",
-                "reference": "037b1251e6344d98211220fb97076ebe65c13e70",
+                "url": "https://api.github.com/repos/yiisoft/html/zipball/c8d38e11f7b6e849ec7b17fa52b324d2c114b37b",
+                "reference": "c8d38e11f7b6e849ec7b17fa52b324d2c114b37b",
                 "shasum": ""
             },
             "require": {
-                "php": "^8.1",
-                "yiisoft/arrays": "^2.0|^3.0",
+                "php": "8.1 - 8.4",
+                "yiisoft/arrays": "^2.0 || ^3.0",
                 "yiisoft/json": "^1.0"
             },
             "require-dev": {
-                "infection/infection": "^0.27",
-                "maglnet/composer-require-checker": "^4.7",
-                "phpunit/phpunit": "^10.5",
-                "rector/rector": "^1.2",
+                "infection/infection": "^0.27.11 || ^0.29.10",
+                "maglnet/composer-require-checker": "^4.7.1",
+                "phpunit/phpunit": "^10.5.45",
+                "rector/rector": "^2.0.8",
                 "spatie/phpunit-watcher": "^1.24",
-                "vimeo/psalm": "^5.26"
+                "vimeo/psalm": "^5.26.1 || ^6.10.0"
             },
             "type": "library",
             "autoload": {
@@ -1129,7 +1130,7 @@
                     "type": "opencollective"
                 }
             ],
-            "time": "2024-11-29T08:46:06+00:00"
+            "time": "2025-04-03T13:41:17+00:00"
         },
         {
             "name": "yiisoft/http",
@@ -1196,34 +1197,34 @@
         },
         {
             "name": "yiisoft/hydrator",
-            "version": "1.5.0",
+            "version": "1.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/hydrator.git",
-                "reference": "9bfde0c99fc35b182d1b74433e9316c9b67c5fc1"
+                "reference": "7ae31f5df87b3d9350563e80490dbb5c8339d4c9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/hydrator/zipball/9bfde0c99fc35b182d1b74433e9316c9b67c5fc1",
-                "reference": "9bfde0c99fc35b182d1b74433e9316c9b67c5fc1",
+                "url": "https://api.github.com/repos/yiisoft/hydrator/zipball/7ae31f5df87b3d9350563e80490dbb5c8339d4c9",
+                "reference": "7ae31f5df87b3d9350563e80490dbb5c8339d4c9",
                 "shasum": ""
             },
             "require": {
-                "php": "^8.1",
+                "php": "8.1 - 8.4",
                 "psr/container": "^2.0",
                 "yiisoft/injector": "^1.1",
                 "yiisoft/strings": "^2.3"
             },
             "require-dev": {
-                "maglnet/composer-require-checker": "^4.7",
-                "phpunit/phpunit": "^10.5",
-                "rector/rector": "^1.2",
-                "roave/infection-static-analysis-plugin": "^1.16",
-                "spatie/phpunit-watcher": "^1.23",
-                "vimeo/psalm": "^5.23",
-                "yiisoft/di": "^1.2",
-                "yiisoft/dummy-provider": "^1.0",
-                "yiisoft/test-support": "^3.0"
+                "maglnet/composer-require-checker": "^4.7.1",
+                "phpunit/phpunit": "^10.5.45",
+                "rector/rector": "^2.0.10",
+                "roave/infection-static-analysis-plugin": "^1.35",
+                "spatie/phpunit-watcher": "^1.24",
+                "vimeo/psalm": "^5.26.1 || ^6.8.9",
+                "yiisoft/di": "^1.3",
+                "yiisoft/dummy-provider": "^1.0.1",
+                "yiisoft/test-support": "^3.0.2"
             },
             "suggest": {
                 "ext-intl": "Allows using `ToDateTime` parameter attribute"
@@ -1269,7 +1270,7 @@
                     "type": "opencollective"
                 }
             ],
-            "time": "2024-09-17T16:10:24+00:00"
+            "time": "2025-03-14T12:16:29+00:00"
         },
         {
             "name": "yiisoft/i18n",
@@ -1911,42 +1912,42 @@
         },
         {
             "name": "yiisoft/validator",
-            "version": "2.1.0",
+            "version": "2.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/validator.git",
-                "reference": "9e8ad99e66c750aceda96fd96033ff4b5d4a7e62"
+                "reference": "2749e37048836df7ccb586bce403fb4a35fdd8d3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/validator/zipball/9e8ad99e66c750aceda96fd96033ff4b5d4a7e62",
-                "reference": "9e8ad99e66c750aceda96fd96033ff4b5d4a7e62",
+                "url": "https://api.github.com/repos/yiisoft/validator/zipball/2749e37048836df7ccb586bce403fb4a35fdd8d3",
+                "reference": "2749e37048836df7ccb586bce403fb4a35fdd8d3",
                 "shasum": ""
             },
             "require": {
                 "ext-mbstring": "*",
-                "php": "^8.1",
-                "psr/container": "^1.0|^2.0",
-                "psr/http-message": "^1.0|^2.0",
-                "yiisoft/arrays": "^2.1|^3.0",
+                "php": "~8.1.0 || ~8.2.0 || ~8.3.0 || ~8.4.0",
+                "psr/container": "^1.0 || ^2.0",
+                "psr/http-message": "^1.0 || ^2.0",
+                "yiisoft/arrays": "^2.1 || ^3.0",
                 "yiisoft/friendly-exception": "^1.0",
                 "yiisoft/network-utilities": "^1.2",
-                "yiisoft/strings": "^2.1",
-                "yiisoft/translator": "^2.1|^3.0"
+                "yiisoft/strings": "^2.6",
+                "yiisoft/translator": "^2.1 || ^3.0"
             },
             "require-dev": {
-                "jetbrains/phpstorm-attributes": "^1.0",
-                "maglnet/composer-require-checker": "^4.3",
-                "phpbench/phpbench": "^1.2",
-                "phpunit/phpunit": "^9.5",
-                "rector/rector": "^1.2",
-                "roave/infection-static-analysis-plugin": "^1.25",
-                "spatie/phpunit-watcher": "^1.23",
-                "vimeo/psalm": "^5.24",
-                "yiisoft/di": "^1.2",
-                "yiisoft/test-support": "^3.0",
-                "yiisoft/translator-message-php": "^1.1",
-                "yiisoft/yii-debug": "dev-master|dev-php80"
+                "jetbrains/phpstorm-attributes": "^1.2",
+                "maglnet/composer-require-checker": "^4.7.1",
+                "phpbench/phpbench": "^1.4.1",
+                "phpunit/phpunit": "^10.5.46",
+                "rector/rector": "^2.0.15",
+                "roave/infection-static-analysis-plugin": "^1.35",
+                "spatie/phpunit-watcher": "^1.24",
+                "vimeo/psalm": "^5.26.1 || ^6.10.3",
+                "yiisoft/di": "^1.3",
+                "yiisoft/test-support": "^3.0.2",
+                "yiisoft/translator-message-php": "^1.1.1",
+                "yiisoft/yii-debug": "dev-master"
             },
             "suggest": {
                 "ext-fileinfo": "To use image rule",
@@ -1999,41 +2000,41 @@
                     "type": "opencollective"
                 }
             ],
-            "time": "2024-09-12T12:10:04+00:00"
+            "time": "2025-05-07T12:03:49+00:00"
         },
         {
             "name": "yiisoft/view",
-            "version": "12.0.0",
+            "version": "12.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/view.git",
-                "reference": "b6b691023b82e15df365cb6703e91f4512941aee"
+                "reference": "a60d15eb6c12cf0953f8dba340461af25bc81069"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/view/zipball/b6b691023b82e15df365cb6703e91f4512941aee",
-                "reference": "b6b691023b82e15df365cb6703e91f4512941aee",
+                "url": "https://api.github.com/repos/yiisoft/view/zipball/a60d15eb6c12cf0953f8dba340461af25bc81069",
+                "reference": "a60d15eb6c12cf0953f8dba340461af25bc81069",
                 "shasum": ""
             },
             "require": {
-                "php": "^8.1",
-                "yiisoft/arrays": "^2.0|^3.0",
-                "yiisoft/cache": "^1.0|^2.0|^3.0",
-                "yiisoft/files": "^1.0|^2.0",
-                "yiisoft/html": "^2.5|^3.0",
+                "php": "8.1 - 8.4",
+                "yiisoft/arrays": "^2.0 || ^3.0",
+                "yiisoft/cache": "^1.0 || ^2.0 || ^3.0",
+                "yiisoft/files": "^1.0 || ^2.0",
+                "yiisoft/html": "^2.5 || ^3.0",
                 "yiisoft/json": "^1.0"
             },
             "require-dev": {
                 "maglnet/composer-require-checker": "^4.7.1",
-                "phpunit/phpunit": "^10.5.39",
-                "rector/rector": "^2.0.3",
+                "phpunit/phpunit": "^10.5.46",
+                "rector/rector": "^2.0.16",
                 "roave/infection-static-analysis-plugin": "^1.35",
                 "spatie/phpunit-watcher": "^1.24",
-                "vimeo/psalm": "^5.26.1",
+                "vimeo/psalm": "^5.26.1 || ^6.8.9",
                 "yiisoft/aliases": "^3.0",
                 "yiisoft/di": "^1.3",
                 "yiisoft/psr-dummy-provider": "^1.0.2",
-                "yiisoft/test-support": "^3.0.1"
+                "yiisoft/test-support": "^3.0.2"
             },
             "type": "library",
             "extra": {
@@ -2079,7 +2080,7 @@
                     "type": "opencollective"
                 }
             ],
-            "time": "2024-12-23T07:43:06+00:00"
+            "time": "2025-05-16T06:56:40+00:00"
         },
         {
             "name": "yiisoft/widget",
@@ -2586,26 +2587,29 @@
         },
         {
             "name": "doctrine/deprecations",
-            "version": "1.1.4",
+            "version": "1.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/deprecations.git",
-                "reference": "31610dbb31faa98e6b5447b62340826f54fbc4e9"
+                "reference": "459c2f5dd3d6a4633d3b5f46ee2b1c40f57d3f38"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/deprecations/zipball/31610dbb31faa98e6b5447b62340826f54fbc4e9",
-                "reference": "31610dbb31faa98e6b5447b62340826f54fbc4e9",
+                "url": "https://api.github.com/repos/doctrine/deprecations/zipball/459c2f5dd3d6a4633d3b5f46ee2b1c40f57d3f38",
+                "reference": "459c2f5dd3d6a4633d3b5f46ee2b1c40f57d3f38",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.1 || ^8.0"
             },
+            "conflict": {
+                "phpunit/phpunit": "<=7.5 || >=13"
+            },
             "require-dev": {
-                "doctrine/coding-standard": "^9 || ^12",
-                "phpstan/phpstan": "1.4.10 || 2.0.3",
+                "doctrine/coding-standard": "^9 || ^12 || ^13",
+                "phpstan/phpstan": "1.4.10 || 2.1.11",
                 "phpstan/phpstan-phpunit": "^1.0 || ^2",
-                "phpunit/phpunit": "^7.5 || ^8.5 || ^9.5",
+                "phpunit/phpunit": "^7.5 || ^8.5 || ^9.6 || ^10.5 || ^11.5 || ^12",
                 "psr/log": "^1 || ^2 || ^3"
             },
             "suggest": {
@@ -2625,9 +2629,9 @@
             "homepage": "https://www.doctrine-project.org/",
             "support": {
                 "issues": "https://github.com/doctrine/deprecations/issues",
-                "source": "https://github.com/doctrine/deprecations/tree/1.1.4"
+                "source": "https://github.com/doctrine/deprecations/tree/1.1.5"
             },
-            "time": "2024-12-07T21:18:45+00:00"
+            "time": "2025-04-07T20:06:18+00:00"
         },
         {
             "name": "felixfbecker/advanced-json-rpc",
@@ -2792,17 +2796,80 @@
             "time": "2024-08-06T10:04:20+00:00"
         },
         {
-            "name": "myclabs/deep-copy",
-            "version": "1.13.0",
+            "name": "httpsoft/http-message",
+            "version": "1.1.6",
             "source": {
                 "type": "git",
-                "url": "https://github.com/myclabs/DeepCopy.git",
-                "reference": "024473a478be9df5fdaca2c793f2232fe788e414"
+                "url": "https://github.com/httpsoft/http-message.git",
+                "reference": "f6c88e2189b9f75f10dfaeb0a85c56ea04a53c19"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/myclabs/DeepCopy/zipball/024473a478be9df5fdaca2c793f2232fe788e414",
-                "reference": "024473a478be9df5fdaca2c793f2232fe788e414",
+                "url": "https://api.github.com/repos/httpsoft/http-message/zipball/f6c88e2189b9f75f10dfaeb0a85c56ea04a53c19",
+                "reference": "f6c88e2189b9f75f10dfaeb0a85c56ea04a53c19",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.4|^8.0",
+                "psr/http-factory": "^1.0",
+                "psr/http-message": "^1.1|^2.0"
+            },
+            "provide": {
+                "psr/http-factory-implementation": "1.0",
+                "psr/http-message-implementation": "1.0"
+            },
+            "require-dev": {
+                "php-http/psr7-integration-tests": "^1.3",
+                "phpunit/phpunit": "^9.5",
+                "squizlabs/php_codesniffer": "^3.7",
+                "vimeo/psalm": "^4.9|^5.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "HttpSoft\\Message\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Evgeniy Zyubin",
+                    "email": "mail@devanych.ru",
+                    "homepage": "https://devanych.ru/",
+                    "role": "Founder and lead developer"
+                }
+            ],
+            "description": "Strict and fast implementation of PSR-7 and PSR-17",
+            "homepage": "https://httpsoft.org/",
+            "keywords": [
+                "http",
+                "http-message",
+                "php",
+                "psr-17",
+                "psr-7"
+            ],
+            "support": {
+                "docs": "https://httpsoft.org/docs/message",
+                "issues": "https://github.com/httpsoft/http-message/issues",
+                "source": "https://github.com/httpsoft/http-message"
+            },
+            "time": "2024-08-09T07:13:21+00:00"
+        },
+        {
+            "name": "myclabs/deep-copy",
+            "version": "1.13.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/myclabs/DeepCopy.git",
+                "reference": "1720ddd719e16cf0db4eb1c6eca108031636d46c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/myclabs/DeepCopy/zipball/1720ddd719e16cf0db4eb1c6eca108031636d46c",
+                "reference": "1720ddd719e16cf0db4eb1c6eca108031636d46c",
                 "shasum": ""
             },
             "require": {
@@ -2841,7 +2908,7 @@
             ],
             "support": {
                 "issues": "https://github.com/myclabs/DeepCopy/issues",
-                "source": "https://github.com/myclabs/DeepCopy/tree/1.13.0"
+                "source": "https://github.com/myclabs/DeepCopy/tree/1.13.1"
             },
             "funding": [
                 {
@@ -2849,7 +2916,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-02-12T12:17:51+00:00"
+            "time": "2025-04-29T12:36:36+00:00"
         },
         {
             "name": "netresearch/jsonmapper",
@@ -3131,16 +3198,16 @@
         },
         {
             "name": "phpdocumentor/reflection-docblock",
-            "version": "5.6.1",
+            "version": "5.6.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpDocumentor/ReflectionDocBlock.git",
-                "reference": "e5e784149a09bd69d9a5e3b01c5cbd2e2bd653d8"
+                "reference": "92dde6a5919e34835c506ac8c523ef095a95ed62"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/e5e784149a09bd69d9a5e3b01c5cbd2e2bd653d8",
-                "reference": "e5e784149a09bd69d9a5e3b01c5cbd2e2bd653d8",
+                "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/92dde6a5919e34835c506ac8c523ef095a95ed62",
+                "reference": "92dde6a5919e34835c506ac8c523ef095a95ed62",
                 "shasum": ""
             },
             "require": {
@@ -3189,9 +3256,9 @@
             "description": "With this component, a library can provide support for annotations via DocBlocks or otherwise retrieve information that is embedded in a DocBlock.",
             "support": {
                 "issues": "https://github.com/phpDocumentor/ReflectionDocBlock/issues",
-                "source": "https://github.com/phpDocumentor/ReflectionDocBlock/tree/5.6.1"
+                "source": "https://github.com/phpDocumentor/ReflectionDocBlock/tree/5.6.2"
             },
-            "time": "2024-12-07T09:39:29+00:00"
+            "time": "2025-04-13T19:20:35+00:00"
         },
         {
             "name": "phpdocumentor/type-resolver",
@@ -3253,16 +3320,16 @@
         },
         {
             "name": "phpstan/phpdoc-parser",
-            "version": "2.0.1",
+            "version": "2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpdoc-parser.git",
-                "reference": "72e51f7c32c5aef7c8b462195b8c599b11199893"
+                "reference": "9b30d6fd026b2c132b3985ce6b23bec09ab3aa68"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpdoc-parser/zipball/72e51f7c32c5aef7c8b462195b8c599b11199893",
-                "reference": "72e51f7c32c5aef7c8b462195b8c599b11199893",
+                "url": "https://api.github.com/repos/phpstan/phpdoc-parser/zipball/9b30d6fd026b2c132b3985ce6b23bec09ab3aa68",
+                "reference": "9b30d6fd026b2c132b3985ce6b23bec09ab3aa68",
                 "shasum": ""
             },
             "require": {
@@ -3294,9 +3361,9 @@
             "description": "PHPDoc parser with support for nullable, intersection and generic types",
             "support": {
                 "issues": "https://github.com/phpstan/phpdoc-parser/issues",
-                "source": "https://github.com/phpstan/phpdoc-parser/tree/2.0.1"
+                "source": "https://github.com/phpstan/phpdoc-parser/tree/2.1.0"
             },
-            "time": "2025-02-13T12:25:43+00:00"
+            "time": "2025-02-19T13:28:12+00:00"
         },
         {
             "name": "phpunit/php-code-coverage",
@@ -3621,16 +3688,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "10.5.45",
+            "version": "10.5.46",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "bd68a781d8e30348bc297449f5234b3458267ae8"
+                "reference": "8080be387a5be380dda48c6f41cee4a13aadab3d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/bd68a781d8e30348bc297449f5234b3458267ae8",
-                "reference": "bd68a781d8e30348bc297449f5234b3458267ae8",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/8080be387a5be380dda48c6f41cee4a13aadab3d",
+                "reference": "8080be387a5be380dda48c6f41cee4a13aadab3d",
                 "shasum": ""
             },
             "require": {
@@ -3640,7 +3707,7 @@
                 "ext-mbstring": "*",
                 "ext-xml": "*",
                 "ext-xmlwriter": "*",
-                "myclabs/deep-copy": "^1.12.1",
+                "myclabs/deep-copy": "^1.13.1",
                 "phar-io/manifest": "^2.0.4",
                 "phar-io/version": "^3.2.1",
                 "php": ">=8.1",
@@ -3702,7 +3769,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
                 "security": "https://github.com/sebastianbergmann/phpunit/security/policy",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/10.5.45"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/10.5.46"
             },
             "funding": [
                 {
@@ -3714,11 +3781,19 @@
                     "type": "github"
                 },
                 {
+                    "url": "https://liberapay.com/sebastianbergmann",
+                    "type": "liberapay"
+                },
+                {
+                    "url": "https://thanks.dev/u/gh/sebastianbergmann",
+                    "type": "thanks_dev"
+                },
+                {
                     "url": "https://tidelift.com/funding/github/packagist/phpunit/phpunit",
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-02-06T16:08:12+00:00"
+            "time": "2025-05-02T06:46:24+00:00"
         },
         {
             "name": "psr/log",
@@ -4756,16 +4831,16 @@
         },
         {
             "name": "symfony/console",
-            "version": "v7.2.1",
+            "version": "v7.2.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "fefcc18c0f5d0efe3ab3152f15857298868dc2c3"
+                "reference": "0e2e3f38c192e93e622e41ec37f4ca70cfedf218"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/fefcc18c0f5d0efe3ab3152f15857298868dc2c3",
-                "reference": "fefcc18c0f5d0efe3ab3152f15857298868dc2c3",
+                "url": "https://api.github.com/repos/symfony/console/zipball/0e2e3f38c192e93e622e41ec37f4ca70cfedf218",
+                "reference": "0e2e3f38c192e93e622e41ec37f4ca70cfedf218",
                 "shasum": ""
             },
             "require": {
@@ -4829,7 +4904,7 @@
                 "terminal"
             ],
             "support": {
-                "source": "https://github.com/symfony/console/tree/v7.2.1"
+                "source": "https://github.com/symfony/console/tree/v7.2.6"
             },
             "funding": [
                 {
@@ -4845,7 +4920,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-12-11T03:49:26+00:00"
+            "time": "2025-04-07T19:09:28+00:00"
         },
         {
             "name": "symfony/deprecation-contracts",
@@ -4982,7 +5057,7 @@
         },
         {
             "name": "symfony/polyfill-ctype",
-            "version": "v1.31.0",
+            "version": "v1.32.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-ctype.git",
@@ -5041,7 +5116,7 @@
                 "portable"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-ctype/tree/v1.31.0"
+                "source": "https://github.com/symfony/polyfill-ctype/tree/v1.32.0"
             },
             "funding": [
                 {
@@ -5061,7 +5136,7 @@
         },
         {
             "name": "symfony/polyfill-intl-grapheme",
-            "version": "v1.31.0",
+            "version": "v1.32.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-intl-grapheme.git",
@@ -5119,7 +5194,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-intl-grapheme/tree/v1.31.0"
+                "source": "https://github.com/symfony/polyfill-intl-grapheme/tree/v1.32.0"
             },
             "funding": [
                 {
@@ -5139,7 +5214,7 @@
         },
         {
             "name": "symfony/polyfill-intl-normalizer",
-            "version": "v1.31.0",
+            "version": "v1.32.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-intl-normalizer.git",
@@ -5200,7 +5275,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-intl-normalizer/tree/v1.31.0"
+                "source": "https://github.com/symfony/polyfill-intl-normalizer/tree/v1.32.0"
             },
             "funding": [
                 {
@@ -5220,19 +5295,20 @@
         },
         {
             "name": "symfony/polyfill-mbstring",
-            "version": "v1.31.0",
+            "version": "v1.32.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-mbstring.git",
-                "reference": "85181ba99b2345b0ef10ce42ecac37612d9fd341"
+                "reference": "6d857f4d76bd4b343eac26d6b539585d2bc56493"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/85181ba99b2345b0ef10ce42ecac37612d9fd341",
-                "reference": "85181ba99b2345b0ef10ce42ecac37612d9fd341",
+                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/6d857f4d76bd4b343eac26d6b539585d2bc56493",
+                "reference": "6d857f4d76bd4b343eac26d6b539585d2bc56493",
                 "shasum": ""
             },
             "require": {
+                "ext-iconv": "*",
                 "php": ">=7.2"
             },
             "provide": {
@@ -5280,7 +5356,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-mbstring/tree/v1.31.0"
+                "source": "https://github.com/symfony/polyfill-mbstring/tree/v1.32.0"
             },
             "funding": [
                 {
@@ -5296,7 +5372,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-09-09T11:45:10+00:00"
+            "time": "2024-12-23T08:48:59+00:00"
         },
         {
             "name": "symfony/service-contracts",
@@ -5383,16 +5459,16 @@
         },
         {
             "name": "symfony/string",
-            "version": "v7.2.0",
+            "version": "v7.2.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/string.git",
-                "reference": "446e0d146f991dde3e73f45f2c97a9faad773c82"
+                "reference": "a214fe7d62bd4df2a76447c67c6b26e1d5e74931"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/string/zipball/446e0d146f991dde3e73f45f2c97a9faad773c82",
-                "reference": "446e0d146f991dde3e73f45f2c97a9faad773c82",
+                "url": "https://api.github.com/repos/symfony/string/zipball/a214fe7d62bd4df2a76447c67c6b26e1d5e74931",
+                "reference": "a214fe7d62bd4df2a76447c67c6b26e1d5e74931",
                 "shasum": ""
             },
             "require": {
@@ -5450,7 +5526,7 @@
                 "utf8"
             ],
             "support": {
-                "source": "https://github.com/symfony/string/tree/v7.2.0"
+                "source": "https://github.com/symfony/string/tree/v7.2.6"
             },
             "funding": [
                 {
@@ -5466,7 +5542,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-11-13T13:31:26+00:00"
+            "time": "2025-04-20T20:18:16+00:00"
         },
         {
             "name": "theseer/tokenizer",
@@ -5870,32 +5946,32 @@
         },
         {
             "name": "yiisoft/test-support",
-            "version": "3.0.1",
+            "version": "3.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/test-support.git",
-                "reference": "6f4181c470096fefcd2dc9e1923565a5dc9c0afe"
+                "reference": "3b07d129cbbcb38e006a640c85c9b5ac9eb7cf4a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/test-support/zipball/6f4181c470096fefcd2dc9e1923565a5dc9c0afe",
-                "reference": "6f4181c470096fefcd2dc9e1923565a5dc9c0afe",
+                "url": "https://api.github.com/repos/yiisoft/test-support/zipball/3b07d129cbbcb38e006a640c85c9b5ac9eb7cf4a",
+                "reference": "3b07d129cbbcb38e006a640c85c9b5ac9eb7cf4a",
                 "shasum": ""
             },
             "require": {
-                "php": "^8.0",
-                "psr/container": "^1.0|^2.0",
+                "php": "~8.0.0 || ~8.1.0 || ~8.2.0 || ~8.3.0 || ~8.4.0",
+                "psr/container": "^1.0 || ^2.0",
                 "psr/event-dispatcher": "^1.0",
                 "psr/log": "^2.0|^3.0",
                 "psr/simple-cache": "^2.0|^3.0"
             },
             "require-dev": {
-                "maglnet/composer-require-checker": "^4.2",
-                "phpunit/phpunit": "^9.5",
-                "rector/rector": "^1.0.0",
+                "maglnet/composer-require-checker": "^4.4",
+                "phpunit/phpunit": "^9.6.22",
+                "rector/rector": "^2.0.9",
                 "roave/infection-static-analysis-plugin": "^1.25",
-                "spatie/phpunit-watcher": "^1.23",
-                "vimeo/psalm": "^4.30|^5.21"
+                "spatie/phpunit-watcher": "^1.23.6",
+                "vimeo/psalm": "^4.30 || ^5.26.1 || ^6.8.6"
             },
             "type": "library",
             "autoload": {
@@ -5916,22 +5992,22 @@
             "support": {
                 "chat": "https://t.me/yii3en",
                 "forum": "https://www.yiiframework.com/forum/",
-                "irc": "irc://irc.freenode.net/yii",
+                "irc": "ircs://irc.libera.chat:6697/yii",
                 "issues": "https://github.com/yiisoft/test-support/issues?state=open",
                 "source": "https://github.com/yiisoft/test-support",
                 "wiki": "https://www.yiiframework.com/wiki/"
             },
             "funding": [
                 {
-                    "url": "https://github.com/yiisoft",
+                    "url": "https://github.com/sponsors/yiisoft",
                     "type": "github"
                 },
                 {
                     "url": "https://opencollective.com/yiisoft",
-                    "type": "open_collective"
+                    "type": "opencollective"
                 }
             ],
-            "time": "2024-02-09T07:23:45+00:00"
+            "time": "2025-02-23T17:02:43+00:00"
         }
     ],
     "aliases": [],
@@ -5944,6 +6020,6 @@
     "platform": {
         "php": "^8.1"
     },
-    "platform-dev": [],
+    "platform-dev": {},
     "plugin-api-version": "2.6.0"
 }
