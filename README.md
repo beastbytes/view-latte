@@ -160,21 +160,66 @@ it defines the `get` function which takes the id of the required package as a pa
 {do $package = get('PackageId')}
 ```
 
-#### Status
-`YiiLatteExtension` is always enabled.
-
 ### CacheExtension
-`CacheExtension` allows caching of view fragments and dynamic content within cached fragments;
-it defines the `cache` and `dynamic` tags.
+`CacheExtension` allows caching of view fragments and dynamic content within cached fragments.
+It is enabled if the DI container contains a `Yiisoft\Cache\CacheInterface` implementation.
 
-#### TODO
-describe how these are used
+`CacheExtension` defines the `cache` and `dynamic` tags.
 
-#### Status
-`CacheExtension` is enabled if the DI container contains a `Yiisoft\Cache\CacheInterface` implementation.
+#### {cache} Tag
+The `cache` tag allows a template or part of a template to be cached. The tag has four parameters:
+
+* ttl (int) &ndash; The TTL of the cached content in seconds. Default is `60`.
+* dependency (Yiisoft\Cache\Dependency\Dependency|null) &ndash; The dependency of the cached content. Default is `null`.
+* beta (float) &ndash; The value for calculating the range that's used for "Probably early expiration". Default is `1.0`.
+* if (bool) &ndash; A condition to be met for content to be cached. Default is `true` (content is always cached)
+
+##### Examples
+###### Basic Usage
+```latte
+{cache}
+    content to be cached
+{/cache}
+```
+###### Set TTL
+```latte
+{cache 3600}
+content to be cached
+{/cache}
+```
+###### Set a Dependency
+```latte
+{cache 3600, new Yiisoft\Cache\Dependency\TagDependency('fragment-1')}
+    content to be cached
+{/cache}
+...
+{if $theAnswerToTheUltimateQuestionOfLife !== 42}
+    {do Yiisoft\Cache\Dependency\TagDependency::invalidate('fragment-1')}
+{/if}
+```
+###### Conditional Caching
+```latte
+{cache 7200, if: $marvin->sizeOfBrain === $planet}
+    content to be cached
+{/cache}
+```
+
+#### {dynamic} Tag
+The `dynamic` tag defines dynamic content within a `cache` tag. The tag has three parameters:
+
+* id (string) &ndash; id of dynamic content
+* contentGenerator (callable) &ndash; a callable that generates the dynamic content;
+it has the signature `function (array $parameters = []): string;`
+* parameters (array) &ndash; parameters as key=>value pairs passed to contentGenerator
+```latte
+{dynamic 'dynamic-content-id', function (array $parameters = []): string {return $generatedContent}, ['a' => 1, 'b' => 2]}
+```
+
+There is no limit to the number of `dynamic` tags within a `cache` tag.
 
 ### LinkExtension
 `LinkExtension` allows generation of URL using routes; provides an n:attribute and a tag to generate URLs.
+It is enabled if the DI container contains a `Yiisoft\Router\UrlGeneratorInterface` implementation.
 
 #### n:href Attribute
 The `n:href` attribute is used to generate URLs in `<a/>` tags;
@@ -183,6 +228,18 @@ its parameters are the same as `Yiisoft\Router\UrlGeneratorInterface::generate()
 <a n:href="route/name, arguments, queryParameters">Content</a>
 ```
 
+#### n:action Attribute
+The `n:action` attribute is used to generate the action URL in `<form/>` tags;
+its parameters are the same as `Yiisoft\Router\UrlGeneratorInterface::generate().
+```latte
+<form n:action="route/name, arguments, queryParameters">
+    // Form controls
+</form>
+```
+
+**Tip** The [form-latte extension](https://github.com/beastbytes/form-latte) 
+integrates the Yii Framework Form package with view-latte.
+
 #### {link} Tag
 The `{link}` tag is used to print a URL;
 its parameters are the same as `Yiisoft\Router\UrlGeneratorInterface::generate().
@@ -190,11 +247,7 @@ its parameters are the same as `Yiisoft\Router\UrlGeneratorInterface::generate()
 {link route/name, arguments, queryParameters}
 ```
 
-#### Status
-`LinkExtension` is enabled if the DI container contains a `Yiisoft\Router\UrlGeneratorInterface` implementation.
-
 ## Other Extensions
-
 ### TranslatorExtension
 Latte's Translation Extension is enabled if 
 the DI container contains a `Yiisoft\Translator\TranslatorInterface` implementation, 
@@ -226,7 +279,6 @@ and functions the FunctionProviderinterface; both **_must_** implement the `__in
 functionality.
 
 ### Example Filter
-
 ```php
 <?php
 
@@ -251,7 +303,6 @@ class MyLatteFilter implements FilterProvider
 ```
 
 ### Example Function
-
 ```php
 <?php
 
