@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+    <component name="LattePluginSettings">
+        <customMacroSettings>
+            <list>
+                <LatteTagSettings AllowedModifiers="true" Arguments="int $ttl, ?Yiisoft\Cache\Dependency\Dependency $dependency, float $beta, bool $if" DeprecatedMessage="" MacroName="cache" MacroType="PAIR" MultiLine="true" />
+                <LatteTagSettings AllowedModifiers="true" Arguments="string $id, callable $contentGenerator, array $parameters" DeprecatedMessage="" MacroName="dynamic" />
+                <LatteTagSettings AllowedModifiers="true" Arguments="string $name, array $arguments, array $queryParameters" DeprecatedMessage="" MacroName="link" />
+                <LatteTagSettings AllowedModifiers="true" Arguments="string $name, array $arguments, array $queryParameters" DeprecatedMessage="" MacroName="n:action" MacroType="ATTR_ONLY" />
+                <LatteTagSettings AllowedModifiers="true" Arguments="string $name, array $arguments, array $queryParameters" DeprecatedMessage="" MacroName="n:href" MacroType="ATTR_ONLY" />
+            </list>
+        </customMacroSettings>
+    </component>
+</project>
