@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "39d095cee11b046bb47208454b983083",
+    "content-hash": "251ade15096f2c27e4f5afff60960d18",
     "packages": [
         {
             "name": "latte/latte",
@@ -303,16 +303,16 @@
         },
         {
             "name": "psr/http-message",
-            "version": "1.1",
+            "version": "2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/http-message.git",
-                "reference": "cb6ce4845ce34a8ad9e68117c10ee90a29919eba"
+                "reference": "402d35bcb92c70c026d1a6a9883f06b2ead23d71"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/http-message/zipball/cb6ce4845ce34a8ad9e68117c10ee90a29919eba",
-                "reference": "cb6ce4845ce34a8ad9e68117c10ee90a29919eba",
+                "url": "https://api.github.com/repos/php-fig/http-message/zipball/402d35bcb92c70c026d1a6a9883f06b2ead23d71",
+                "reference": "402d35bcb92c70c026d1a6a9883f06b2ead23d71",
                 "shasum": ""
             },
             "require": {
@@ -321,7 +321,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.1.x-dev"
+                    "dev-master": "2.0.x-dev"
                 }
             },
             "autoload": {
@@ -336,7 +336,7 @@
             "authors": [
                 {
                     "name": "PHP-FIG",
-                    "homepage": "http://www.php-fig.org/"
+                    "homepage": "https://www.php-fig.org/"
                 }
             ],
             "description": "Common interface for HTTP messages",
@@ -350,9 +350,9 @@
                 "response"
             ],
             "support": {
-                "source": "https://github.com/php-fig/http-message/tree/1.1"
+                "source": "https://github.com/php-fig/http-message/tree/2.0"
             },
-            "time": "2023-04-04T09:50:52+00:00"
+            "time": "2023-04-04T09:54:51+00:00"
         },
         {
             "name": "psr/http-server-handler",
@@ -737,69 +737,6 @@
             "time": "2025-03-02T16:55:21+00:00"
         },
         {
-            "name": "yiisoft/factory",
-            "version": "1.3.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/yiisoft/factory.git",
-                "reference": "59d7cc3a1f9b1e3100c9b48511b5a0852e924982"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/factory/zipball/59d7cc3a1f9b1e3100c9b48511b5a0852e924982",
-                "reference": "59d7cc3a1f9b1e3100c9b48511b5a0852e924982",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^8.0",
-                "psr/container": "^1.0|^2.0",
-                "yiisoft/definitions": "^1.0|^2.0|^3.0.1"
-            },
-            "require-dev": {
-                "maglnet/composer-require-checker": "^4.2",
-                "phpunit/phpunit": "^9.5",
-                "rector/rector": "^1.0.0",
-                "roave/infection-static-analysis-plugin": "^1.16",
-                "spatie/phpunit-watcher": "^1.23",
-                "vimeo/psalm": "^4.30|^5.4",
-                "yiisoft/test-support": "^3.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Yiisoft\\Factory\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "description": "Yii Factory",
-            "homepage": "https://www.yiiframework.com/",
-            "keywords": [
-                "factory"
-            ],
-            "support": {
-                "chat": "https://t.me/yii3en",
-                "forum": "https://www.yiiframework.com/forum/",
-                "irc": "ircs://irc.libera.chat:6697/yii",
-                "issues": "https://github.com/yiisoft/factory/issues?state=open",
-                "source": "https://github.com/yiisoft/factory",
-                "wiki": "https://www.yiiframework.com/wiki/"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/sponsors/yiisoft",
-                    "type": "github"
-                },
-                {
-                    "url": "https://opencollective.com/yiisoft",
-                    "type": "opencollective"
-                }
-            ],
-            "time": "2024-12-09T19:43:47+00:00"
-        },
-        {
             "name": "yiisoft/files",
             "version": "2.0.0",
             "source": {
@@ -858,157 +795,6 @@
                 }
             ],
             "time": "2022-07-05T06:43:38+00:00"
-        },
-        {
-            "name": "yiisoft/form",
-            "version": "1.4.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/yiisoft/form.git",
-                "reference": "3d7a887b481e80388253e91bd7f435efedcc8fc8"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/form/zipball/3d7a887b481e80388253e91bd7f435efedcc8fc8",
-                "reference": "3d7a887b481e80388253e91bd7f435efedcc8fc8",
-                "shasum": ""
-            },
-            "require": {
-                "php": "8.1 - 8.4",
-                "yiisoft/friendly-exception": "^1.0",
-                "yiisoft/html": "^3.8",
-                "yiisoft/widget": "^2.2"
-            },
-            "require-dev": {
-                "infection/infection": "^0.26.21 || ^0.29.14",
-                "maglnet/composer-require-checker": "^4.7.1",
-                "phpunit/phpunit": "^10.5.45",
-                "rector/rector": "^2.0.10",
-                "spatie/phpunit-watcher": "^1.24",
-                "vimeo/psalm": "^5.26.1 || ^6.9.4"
-            },
-            "type": "library",
-            "extra": {
-                "config-plugin": {
-                    "params": "params.php",
-                    "bootstrap": "bootstrap.php"
-                },
-                "config-plugin-options": {
-                    "source-directory": "config"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Yiisoft\\Form\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "description": "The package helps with implementing data entry forms.",
-            "homepage": "https://www.yiiframework.com/",
-            "keywords": [
-                "form",
-                "yii"
-            ],
-            "support": {
-                "chat": "https://t.me/yii3en",
-                "forum": "https://www.yiiframework.com/forum/",
-                "irc": "ircs://irc.libera.chat:6697/yii",
-                "issues": "https://github.com/yiisoft/form/issues?state=open",
-                "source": "https://github.com/yiisoft/form",
-                "wiki": "https://www.yiiframework.com/wiki/"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/yiisoft",
-                    "type": "github"
-                },
-                {
-                    "url": "https://opencollective.com/yiisoft",
-                    "type": "open_collective"
-                }
-            ],
-            "time": "2025-03-27T12:12:06+00:00"
-        },
-        {
-            "name": "yiisoft/form-model",
-            "version": "1.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/yiisoft/form-model.git",
-                "reference": "f0b6eb17d1a9d04fefbab4013b5177207ed0574a"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/form-model/zipball/f0b6eb17d1a9d04fefbab4013b5177207ed0574a",
-                "reference": "f0b6eb17d1a9d04fefbab4013b5177207ed0574a",
-                "shasum": ""
-            },
-            "require": {
-                "ext-mbstring": "*",
-                "php": "^8.1",
-                "psr/http-message": "^1.0|^2.0",
-                "yiisoft/form": "^1.0",
-                "yiisoft/html": "^3.3",
-                "yiisoft/hydrator": "^1.3",
-                "yiisoft/strings": "^2.3",
-                "yiisoft/validator": "^2.1"
-            },
-            "require-dev": {
-                "httpsoft/http-message": "^1.1",
-                "maglnet/composer-require-checker": "^4.7",
-                "phpunit/phpunit": "^10.5",
-                "rector/rector": "^1.2",
-                "roave/infection-static-analysis-plugin": "^1.34",
-                "spatie/phpunit-watcher": "^1.23",
-                "vimeo/psalm": "^5.25",
-                "yiisoft/di": "^1.2"
-            },
-            "type": "library",
-            "extra": {
-                "config-plugin": {
-                    "di": "di.php"
-                },
-                "config-plugin-options": {
-                    "source-directory": "config"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Yiisoft\\FormModel\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "description": "Provides a base for form models and helps to fill, validate and display them.",
-            "homepage": "https://www.yiiframework.com/",
-            "keywords": [
-                "form",
-                "model"
-            ],
-            "support": {
-                "chat": "https://t.me/yii3en",
-                "forum": "https://www.yiiframework.com/forum/",
-                "irc": "ircs://irc.libera.chat:6697/yii",
-                "issues": "https://github.com/yiisoft/form-model/issues?state=open",
-                "source": "https://github.com/yiisoft/form-model",
-                "wiki": "https://www.yiiframework.com/wiki/"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/sponsors/yiisoft",
-                    "type": "github"
-                },
-                {
-                    "url": "https://opencollective.com/yiisoft",
-                    "type": "opencollective"
-                }
-            ],
-            "time": "2024-09-13T07:16:51+00:00"
         },
         {
             "name": "yiisoft/friendly-exception",
@@ -1194,143 +980,6 @@
                 }
             ],
             "time": "2021-11-09T09:42:11+00:00"
-        },
-        {
-            "name": "yiisoft/hydrator",
-            "version": "1.6.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/yiisoft/hydrator.git",
-                "reference": "7ae31f5df87b3d9350563e80490dbb5c8339d4c9"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/hydrator/zipball/7ae31f5df87b3d9350563e80490dbb5c8339d4c9",
-                "reference": "7ae31f5df87b3d9350563e80490dbb5c8339d4c9",
-                "shasum": ""
-            },
-            "require": {
-                "php": "8.1 - 8.4",
-                "psr/container": "^2.0",
-                "yiisoft/injector": "^1.1",
-                "yiisoft/strings": "^2.3"
-            },
-            "require-dev": {
-                "maglnet/composer-require-checker": "^4.7.1",
-                "phpunit/phpunit": "^10.5.45",
-                "rector/rector": "^2.0.10",
-                "roave/infection-static-analysis-plugin": "^1.35",
-                "spatie/phpunit-watcher": "^1.24",
-                "vimeo/psalm": "^5.26.1 || ^6.8.9",
-                "yiisoft/di": "^1.3",
-                "yiisoft/dummy-provider": "^1.0.1",
-                "yiisoft/test-support": "^3.0.2"
-            },
-            "suggest": {
-                "ext-intl": "Allows using `ToDateTime` parameter attribute"
-            },
-            "type": "library",
-            "extra": {
-                "config-plugin": {
-                    "di": "di.php"
-                },
-                "config-plugin-options": {
-                    "source-directory": "config"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Yiisoft\\Hydrator\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "description": "Create and populate objects with type casting, mapping and dependencies resolving support.",
-            "homepage": "https://www.yiiframework.com/",
-            "keywords": [
-                "hydrator"
-            ],
-            "support": {
-                "chat": "https://t.me/yii3en",
-                "forum": "https://www.yiiframework.com/forum/",
-                "irc": "ircs://irc.libera.chat:6697/yii",
-                "issues": "https://github.com/yiisoft/hydrator/issues?state=open",
-                "source": "https://github.com/yiisoft/hydrator",
-                "wiki": "https://www.yiiframework.com/wiki/"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/sponsors/yiisoft",
-                    "type": "github"
-                },
-                {
-                    "url": "https://opencollective.com/yiisoft",
-                    "type": "opencollective"
-                }
-            ],
-            "time": "2025-03-14T12:16:29+00:00"
-        },
-        {
-            "name": "yiisoft/i18n",
-            "version": "1.2.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/yiisoft/i18n.git",
-                "reference": "c05e9e031fb36fc193152e18fa791bbf6d0582b8"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/i18n/zipball/c05e9e031fb36fc193152e18fa791bbf6d0582b8",
-                "reference": "c05e9e031fb36fc193152e18fa791bbf6d0582b8",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^8.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^9.5",
-                "rector/rector": "^0.17.0",
-                "roave/infection-static-analysis-plugin": "^1.16",
-                "spatie/phpunit-watcher": "^1.23",
-                "vimeo/psalm": "^4.30|^5.4"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Yiisoft\\I18n\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "description": "Yii Internationalization Library",
-            "homepage": "https://www.yiiframework.com/",
-            "keywords": [
-                "i18n",
-                "locale"
-            ],
-            "support": {
-                "chat": "https://t.me/yii3en",
-                "forum": "https://www.yiiframework.com/forum/",
-                "irc": "irc://irc.freenode.net/yii",
-                "issues": "https://github.com/yiisoft/i18n/issues?state=open",
-                "source": "https://github.com/yiisoft/i18n",
-                "wiki": "https://www.yiiframework.com/wiki/"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/sponsors/yiisoft",
-                    "type": "github"
-                },
-                {
-                    "url": "https://opencollective.com/yiisoft",
-                    "type": "opencollective"
-                }
-            ],
-            "time": "2023-06-10T14:18:35+00:00"
         },
         {
             "name": "yiisoft/injector",
@@ -1535,87 +1184,24 @@
             "time": "2023-09-25T07:01:31+00:00"
         },
         {
-            "name": "yiisoft/network-utilities",
-            "version": "1.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/yiisoft/network-utilities.git",
-                "reference": "9b51434f17035ce70ba220518a9d52656b6c1cb4"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/network-utilities/zipball/9b51434f17035ce70ba220518a9d52656b6c1cb4",
-                "reference": "9b51434f17035ce70ba220518a9d52656b6c1cb4",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.4|^8.0"
-            },
-            "require-dev": {
-                "maglnet/composer-require-checker": "^3.8|^4.4",
-                "phpunit/phpunit": "^9.5",
-                "rector/rector": "^1.2",
-                "roave/infection-static-analysis-plugin": "^1.16",
-                "spatie/phpunit-watcher": "^1.23",
-                "vimeo/psalm": "^4.30|^5.25"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Yiisoft\\NetworkUtilities\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "description": "Network related utilities",
-            "homepage": "https://www.yiiframework.com/",
-            "keywords": [
-                "IP",
-                "dns",
-                "mask",
-                "network"
-            ],
-            "support": {
-                "chat": "https://t.me/yii3en",
-                "forum": "https://www.yiiframework.com/forum/",
-                "irc": "ircs://irc.libera.chat:6697/yii",
-                "issues": "https://github.com/yiisoft/network-utilities/issues?state=open",
-                "source": "https://github.com/yiisoft/network-utilities",
-                "wiki": "https://www.yiiframework.com/wiki/"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/sponsors/yiisoft",
-                    "type": "github"
-                },
-                {
-                    "url": "https://opencollective.com/yiisoft",
-                    "type": "opencollective"
-                }
-            ],
-            "time": "2024-09-02T14:07:06+00:00"
-        },
-        {
             "name": "yiisoft/router",
-            "version": "3.1.0",
+            "version": "4.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/router.git",
-                "reference": "86ee95984109bd96548cad3f93df8ad9ca4de0b8"
+                "reference": "6ca2a514152a576dccb2c6031aeb8e89d4b60b97"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/router/zipball/86ee95984109bd96548cad3f93df8ad9ca4de0b8",
-                "reference": "86ee95984109bd96548cad3f93df8ad9ca4de0b8",
+                "url": "https://api.github.com/repos/yiisoft/router/zipball/6ca2a514152a576dccb2c6031aeb8e89d4b60b97",
+                "reference": "6ca2a514152a576dccb2c6031aeb8e89d4b60b97",
                 "shasum": ""
             },
             "require": {
-                "php": "^8.0",
+                "php": "~8.1.0 || ~8.2.0 || ~8.3.0 || ~8.4.0",
                 "psr/event-dispatcher": "^1.0",
                 "psr/http-factory": "^1.0",
-                "psr/http-message": "^1.0|^2.0",
+                "psr/http-message": "^1.0 || ^2.0",
                 "psr/http-server-handler": "^1.0",
                 "psr/http-server-middleware": "^1.0",
                 "yiisoft/http": "^1.2",
@@ -1623,18 +1209,19 @@
                 "yiisoft/router-implementation": "1.0.0"
             },
             "require-dev": {
-                "maglnet/composer-require-checker": "^4.4",
-                "nyholm/psr7": "^1.5",
-                "phpunit/phpunit": "^9.5",
-                "psr/container": "^1.1|^2.0",
-                "rector/rector": "^1.0",
-                "roave/infection-static-analysis-plugin": "^1.18",
-                "spatie/phpunit-watcher": "^1.23",
-                "vimeo/psalm": "^4.30|^5.22",
-                "yiisoft/di": "^1.0",
-                "yiisoft/dummy-provider": "^1.0.0",
-                "yiisoft/hydrator": "^1.0",
-                "yiisoft/test-support": "^3.0"
+                "maglnet/composer-require-checker": "^4.7.1",
+                "nyholm/psr7": "^1.8.2",
+                "phpunit/phpunit": "^10.5.45",
+                "psr/container": "^1.1 || ^2.0.2",
+                "rector/rector": "^2.0.9",
+                "roave/infection-static-analysis-plugin": "^1.35",
+                "spatie/phpunit-watcher": "^1.24",
+                "vimeo/psalm": "^5.26.1 || ^6.8.6",
+                "yiisoft/di": "^1.3",
+                "yiisoft/dummy-provider": "^1.0.1",
+                "yiisoft/hydrator": "^1.5",
+                "yiisoft/test-support": "^3.0.1",
+                "yiisoft/yii-debug": "dev-master"
             },
             "suggest": {
                 "yiisoft/hydrator": "Needed to use `RouteArgument` attribute",
@@ -1643,7 +1230,8 @@
             "type": "library",
             "extra": {
                 "config-plugin": {
-                    "di": "di.php"
+                    "di": "di.php",
+                    "params": "params.php"
                 },
                 "config-plugin-options": {
                     "source-directory": "config"
@@ -1668,58 +1256,59 @@
             "support": {
                 "chat": "https://t.me/yii3en",
                 "forum": "https://www.yiiframework.com/forum/",
-                "irc": "irc://irc.freenode.net/yii",
+                "irc": "ircs://irc.libera.chat:6697/yii",
                 "issues": "https://github.com/yiisoft/router/issues?state=open",
                 "source": "https://github.com/yiisoft/router",
                 "wiki": "https://www.yiiframework.com/wiki/"
             },
             "funding": [
                 {
-                    "url": "https://github.com/yiisoft",
+                    "url": "https://github.com/sponsors/yiisoft",
                     "type": "github"
                 },
                 {
                     "url": "https://opencollective.com/yiisoft",
-                    "type": "open_collective"
+                    "type": "opencollective"
                 }
             ],
-            "time": "2024-02-20T11:39:48+00:00"
+            "time": "2025-02-25T12:37:17+00:00"
         },
         {
             "name": "yiisoft/router-fastroute",
-            "version": "3.0.0",
+            "version": "4.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/router-fastroute.git",
-                "reference": "2a570aa9d99743bee69faf34c9b712b6d7dd2941"
+                "reference": "fcd44ef8bd3334bd49c79fb93a0f0dabdebb28c5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/router-fastroute/zipball/2a570aa9d99743bee69faf34c9b712b6d7dd2941",
-                "reference": "2a570aa9d99743bee69faf34c9b712b6d7dd2941",
+                "url": "https://api.github.com/repos/yiisoft/router-fastroute/zipball/fcd44ef8bd3334bd49c79fb93a0f0dabdebb28c5",
+                "reference": "fcd44ef8bd3334bd49c79fb93a0f0dabdebb28c5",
                 "shasum": ""
             },
             "require": {
                 "nikic/fast-route": "^1.3",
-                "php": "^8.0",
-                "psr/http-message": "^1.0",
-                "psr/simple-cache": "^2.0|^3.0",
+                "php": "8.1 - 8.4",
+                "psr/http-message": "^1.0 || ^2.0",
+                "psr/simple-cache": "^2.0 || ^3.0",
                 "yiisoft/http": "^1.2",
-                "yiisoft/router": "^2.1|^3.0"
+                "yiisoft/router": "^4"
             },
             "provide": {
                 "yiisoft/router-implementation": "1.0.0"
             },
             "require-dev": {
-                "maglnet/composer-require-checker": "^4.2",
-                "nyholm/psr7": "^1.4",
-                "phpunit/phpunit": "^9.5",
-                "psr/container": "^2.0",
-                "rector/rector": "^0.15.4",
-                "roave/infection-static-analysis-plugin": "^1.16",
-                "spatie/phpunit-watcher": "^1.23",
-                "vimeo/psalm": "^4.30|^5.6",
-                "yiisoft/di": "^1.2"
+                "maglnet/composer-require-checker": "^4.7.1",
+                "nyholm/psr7": "^1.8.2",
+                "phpunit/phpunit": "^10.5.45",
+                "psr/container": "^2.0.2",
+                "rector/rector": "^2.0.9",
+                "roave/infection-static-analysis-plugin": "^1.35",
+                "spatie/phpunit-watcher": "^1.24",
+                "vimeo/psalm": "^5.26.1 || ^6.8.6",
+                "yiisoft/di": "^1.3",
+                "yiisoft/test-support": "^3.0.2"
             },
             "type": "library",
             "extra": {
@@ -1750,22 +1339,22 @@
             "support": {
                 "chat": "https://t.me/yii3en",
                 "forum": "https://www.yiiframework.com/forum/",
-                "irc": "irc://irc.freenode.net/yii",
+                "irc": "ircs://irc.libera.chat:6697/yii",
                 "issues": "https://github.com/yiisoft/router-fastroute/issues?state=open",
                 "source": "https://github.com/yiisoft/router-fastroute",
                 "wiki": "https://www.yiiframework.com/wiki/"
             },
             "funding": [
                 {
-                    "url": "https://github.com/yiisoft",
+                    "url": "https://github.com/sponsors/yiisoft",
                     "type": "github"
                 },
                 {
                     "url": "https://opencollective.com/yiisoft",
-                    "type": "open_collective"
+                    "type": "opencollective"
                 }
             ],
-            "time": "2023-02-17T15:08:52+00:00"
+            "time": "2025-02-25T12:57:33+00:00"
         },
         {
             "name": "yiisoft/strings",
@@ -1829,178 +1418,6 @@
                 }
             ],
             "time": "2025-02-09T16:30:52+00:00"
-        },
-        {
-            "name": "yiisoft/translator",
-            "version": "3.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/yiisoft/translator.git",
-                "reference": "94a0f11b307043917c21ba45d71e8087db8aeaf1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/translator/zipball/94a0f11b307043917c21ba45d71e8087db8aeaf1",
-                "reference": "94a0f11b307043917c21ba45d71e8087db8aeaf1",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^8.0",
-                "psr/event-dispatcher": "1.0.0",
-                "yiisoft/files": "^1.0|^2.0",
-                "yiisoft/i18n": "^1.0"
-            },
-            "require-dev": {
-                "maglnet/composer-require-checker": "^4.2",
-                "phpunit/phpunit": "^9.6",
-                "rector/rector": "^2.0.3",
-                "roave/infection-static-analysis-plugin": "^1.25",
-                "spatie/phpunit-watcher": "^1.23",
-                "vimeo/psalm": "^4.30|^5.21",
-                "yiisoft/di": "^1.2"
-            },
-            "suggest": {
-                "ext-intl": "Allows using intl message formatter",
-                "ext-tokenizer": "Allows using message extraction",
-                "yiisoft/event-dispatcher": "To listen for events about missing categories and messages"
-            },
-            "type": "library",
-            "extra": {
-                "config-plugin": {
-                    "di": "di.php",
-                    "params": "params.php"
-                },
-                "config-plugin-options": {
-                    "source-directory": "config"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Yiisoft\\Translator\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "description": "Yii Message Translator",
-            "homepage": "https://www.yiiframework.com/",
-            "keywords": [
-                "i18n",
-                "internationalization",
-                "translation"
-            ],
-            "support": {
-                "chat": "https://t.me/yii3en",
-                "forum": "https://www.yiiframework.com/forum/",
-                "irc": "ircs://irc.libera.chat:6697/yii",
-                "issues": "https://github.com/yiisoft/translator/issues?state=open",
-                "source": "https://github.com/yiisoft/translator",
-                "wiki": "https://www.yiiframework.com/wiki/"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/sponsors/yiisoft",
-                    "type": "github"
-                },
-                {
-                    "url": "https://opencollective.com/yiisoft",
-                    "type": "opencollective"
-                }
-            ],
-            "time": "2024-12-26T07:49:19+00:00"
-        },
-        {
-            "name": "yiisoft/validator",
-            "version": "2.3.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/yiisoft/validator.git",
-                "reference": "2749e37048836df7ccb586bce403fb4a35fdd8d3"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/validator/zipball/2749e37048836df7ccb586bce403fb4a35fdd8d3",
-                "reference": "2749e37048836df7ccb586bce403fb4a35fdd8d3",
-                "shasum": ""
-            },
-            "require": {
-                "ext-mbstring": "*",
-                "php": "~8.1.0 || ~8.2.0 || ~8.3.0 || ~8.4.0",
-                "psr/container": "^1.0 || ^2.0",
-                "psr/http-message": "^1.0 || ^2.0",
-                "yiisoft/arrays": "^2.1 || ^3.0",
-                "yiisoft/friendly-exception": "^1.0",
-                "yiisoft/network-utilities": "^1.2",
-                "yiisoft/strings": "^2.6",
-                "yiisoft/translator": "^2.1 || ^3.0"
-            },
-            "require-dev": {
-                "jetbrains/phpstorm-attributes": "^1.2",
-                "maglnet/composer-require-checker": "^4.7.1",
-                "phpbench/phpbench": "^1.4.1",
-                "phpunit/phpunit": "^10.5.46",
-                "rector/rector": "^2.0.15",
-                "roave/infection-static-analysis-plugin": "^1.35",
-                "spatie/phpunit-watcher": "^1.24",
-                "vimeo/psalm": "^5.26.1 || ^6.10.3",
-                "yiisoft/di": "^1.3",
-                "yiisoft/test-support": "^3.0.2",
-                "yiisoft/translator-message-php": "^1.1.1",
-                "yiisoft/yii-debug": "dev-master"
-            },
-            "suggest": {
-                "ext-fileinfo": "To use image rule",
-                "ext-intl": "Allows using date rules and IDN validation for emails",
-                "yiisoft/di": "To create rule handlers via Yii DI"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "3.0.x-dev"
-                },
-                "config-plugin": {
-                    "di": "di.php",
-                    "params": "params.php"
-                },
-                "config-plugin-options": {
-                    "source-directory": "config"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Yiisoft\\Validator\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "description": "Yii Validator",
-            "homepage": "https://www.yiiframework.com/",
-            "keywords": [
-                "validation",
-                "validator"
-            ],
-            "support": {
-                "chat": "https://t.me/yii3en",
-                "forum": "https://www.yiiframework.com/forum/",
-                "irc": "ircs://irc.libera.chat:6697/yii",
-                "issues": "https://github.com/yiisoft/validator/issues?state=open",
-                "source": "https://github.com/yiisoft/validator",
-                "wiki": "https://www.yiiframework.com/wiki/"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/sponsors/yiisoft",
-                    "type": "github"
-                },
-                {
-                    "url": "https://opencollective.com/yiisoft",
-                    "type": "opencollective"
-                }
-            ],
-            "time": "2025-05-07T12:03:49+00:00"
         },
         {
             "name": "yiisoft/view",
@@ -2081,84 +1498,6 @@
                 }
             ],
             "time": "2025-05-16T06:56:40+00:00"
-        },
-        {
-            "name": "yiisoft/widget",
-            "version": "2.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/yiisoft/widget.git",
-                "reference": "d469c67698b4ee8bc4824c2adb0adbef645c1cff"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/widget/zipball/d469c67698b4ee8bc4824c2adb0adbef645c1cff",
-                "reference": "d469c67698b4ee8bc4824c2adb0adbef645c1cff",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^8.0",
-                "psr/container": "^1.0|^2.0",
-                "yiisoft/definitions": "^3.1",
-                "yiisoft/factory": "^1.2",
-                "yiisoft/friendly-exception": "^1.0",
-                "yiisoft/html": "^2.0|^3.0"
-            },
-            "require-dev": {
-                "maglnet/composer-require-checker": "^4.2",
-                "phpunit/phpunit": "^9.5",
-                "rector/rector": "^0.18.3",
-                "roave/infection-static-analysis-plugin": "^1.16",
-                "spatie/phpunit-watcher": "^1.23",
-                "vimeo/psalm": "^4.30|^5.4",
-                "yiisoft/test-support": "^3.0"
-            },
-            "type": "library",
-            "extra": {
-                "config-plugin": {
-                    "params": "params.php",
-                    "widgets": [],
-                    "bootstrap": "bootstrap.php",
-                    "widgets-themes": []
-                },
-                "config-plugin-options": {
-                    "source-directory": "config"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Yiisoft\\Widget\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "description": "Widget",
-            "homepage": "https://www.yiiframework.com/",
-            "keywords": [
-                "widgets",
-                "yii"
-            ],
-            "support": {
-                "chat": "https://t.me/yii3en",
-                "forum": "https://www.yiiframework.com/forum/",
-                "irc": "irc://irc.freenode.net/yii",
-                "issues": "https://github.com/yiisoft/widget/issues?state=open",
-                "source": "https://github.com/yiisoft/widget",
-                "wiki": "https://www.yiiframework.com/wiki/"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/sponsors/yiisoft",
-                    "type": "github"
-                },
-                {
-                    "url": "https://opencollective.com/yiisoft",
-                    "type": "opencollective"
-                }
-            ],
-            "time": "2023-12-25T18:47:09+00:00"
         }
     ],
     "packages-dev": [
@@ -5829,6 +5168,86 @@
                 }
             ],
             "time": "2023-02-13T10:14:03+00:00"
+        },
+        {
+            "name": "yiisoft/cache-file",
+            "version": "3.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yiisoft/cache-file.git",
+                "reference": "484cde38f64504aeda89065339f9a313bc0691aa"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yiisoft/cache-file/zipball/484cde38f64504aeda89065339f9a313bc0691aa",
+                "reference": "484cde38f64504aeda89065339f9a313bc0691aa",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.0",
+                "psr/simple-cache": "^2.0|^3.0"
+            },
+            "provide": {
+                "psr/simple-cache-implementation": "1.0.0"
+            },
+            "require-dev": {
+                "maglnet/composer-require-checker": "^4.4",
+                "php-mock/php-mock-phpunit": "^2.6",
+                "phpunit/phpunit": "^9.5",
+                "rector/rector": "^2.0",
+                "roave/infection-static-analysis-plugin": "^1.16",
+                "spatie/phpunit-watcher": "^1.23",
+                "vimeo/psalm": "^4.30|^5.21",
+                "yiisoft/aliases": "^3.0",
+                "yiisoft/di": "^1.2"
+            },
+            "type": "library",
+            "extra": {
+                "config-plugin": {
+                    "di": "di.php",
+                    "params": "params.php"
+                },
+                "config-plugin-options": {
+                    "source-directory": "config"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Yiisoft\\Cache\\File\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "Yii Caching Library - File Handler",
+            "homepage": "https://www.yiiframework.com/",
+            "keywords": [
+                "cache",
+                "file",
+                "framework",
+                "psr-16",
+                "yii"
+            ],
+            "support": {
+                "chat": "https://t.me/yii3en",
+                "forum": "https://www.yiiframework.com/forum/",
+                "irc": "ircs://irc.libera.chat:6697/yii",
+                "issues": "https://github.com/yiisoft/cache-file/issues?state=open",
+                "source": "https://github.com/yiisoft/cache-file",
+                "wiki": "https://www.yiiframework.com/wiki/"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/sponsors/yiisoft",
+                    "type": "github"
+                },
+                {
+                    "url": "https://opencollective.com/yiisoft",
+                    "type": "opencollective"
+                }
+            ],
+            "time": "2025-01-13T20:33:48+00:00"
         },
         {
             "name": "yiisoft/dummy-provider",

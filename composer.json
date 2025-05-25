@@ -14,7 +14,6 @@
     "php": "^8.1",
     "latte/latte": "dev-master",
     "psr/container": "^2.0",
-    "yiisoft/form-model": "^1.0",
     "yiisoft/router": "^4.0",
     "yiisoft/view": "10 - 12"
   },
@@ -23,8 +22,9 @@
     "phpunit/phpunit": "^10.0",
     "vimeo/psalm": "^5.0",
     "yiisoft/aliases": "^3.0",
+    "yiisoft/cache-file": "^3.0",
     "yiisoft/dummy-provider": "^1.0",
-    "yiisoft/router-fastroute": "3.0",
+    "yiisoft/router-fastroute": "4.0",
     "yiisoft/psr-dummy-provider": "^1.0",
     "yiisoft/test-support": "^3.0"
   },
