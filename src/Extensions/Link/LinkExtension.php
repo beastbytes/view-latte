@@ -52,6 +52,7 @@ final class LinkExtension extends Extension
         $node->expression = new Php\Scalar\StringNode($url);
         return $node;
     }
+
     public static function toValue($args): mixed
     {
         try {
