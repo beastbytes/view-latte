@@ -152,27 +152,19 @@ And a view template will be:
 ## View-Latte Extensions
 The `view-latte` package contains the following extensions:
 
-### YiiLatteExtension
-`YiiLatteExtension` allows access to any package in the DI container;
-it defines the `get` function which takes the id of the required package as a parameter.
-
-```latte
-{do $package = get('PackageId')}
-```
-
 ### CacheExtension
-`CacheExtension` allows caching of view fragments and dynamic content within cached fragments.
+The `CacheExtension` allows caching of view fragments and dynamic content within cached fragments.
+The extension provides the `cache` and `dynamic` tags.
 It is enabled if the DI container contains a `Yiisoft\Cache\CacheInterface` implementation.
 
-`CacheExtension` defines the `cache` and `dynamic` tags.
-
 #### {cache} Tag
-The `cache` tag allows a template or part of a template to be cached. The tag has four parameters:
+The `cache` tag allows a template or part of a template to be cached. The tag has three parameters:
 
 * ttl (int) &ndash; The TTL of the cached content in seconds. Default is `60`.
-* dependency (Yiisoft\Cache\Dependency\Dependency|null) &ndash; The dependency of the cached content. Default is `null`.
-* beta (float) &ndash; The value for calculating the range that's used for "Probably early expiration". Default is `1.0`.
-* if (bool) &ndash; A condition to be met for content to be cached. Default is `true` (content is always cached)
+* dependency (Yiisoft\Cache\Dependency\Dependency|null) &ndash; The dependency of the cached content. 
+Default is `null`.
+* beta (float) &ndash; The value for calculating the range that's used for "Probably early expiration".
+Default is `1.0`.
 
 ##### Examples
 ###### Basic Usage
@@ -197,28 +189,22 @@ content to be cached
     {do Yiisoft\Cache\Dependency\TagDependency::invalidate('fragment-1')}
 {/if}
 ```
-###### Conditional Caching
-```latte
-{cache 7200, if: $marvin->sizeOfBrain === $planet}
-    content to be cached
-{/cache}
-```
 
 #### {dynamic} Tag
 The `dynamic` tag defines dynamic content within a `cache` tag. The tag has three parameters:
 
-* id (string) &ndash; id of dynamic content
 * contentGenerator (callable) &ndash; a callable that generates the dynamic content;
 it has the signature `function (array $parameters = []): string;`
 * parameters (array) &ndash; parameters as key=>value pairs passed to contentGenerator
 ```latte
-{dynamic 'dynamic-content-id', function (array $parameters = []): string {return $generatedContent}, ['a' => 1, 'b' => 2]}
+{dynamic function (array $parameters = []): string {return $generatedContent}, ['a' => 1, 'b' => 2]}
 ```
 
 There is no limit to the number of `dynamic` tags within a `cache` tag.
 
 ### LinkExtension
-`LinkExtension` allows generation of URL using routes; provides an n:attribute and a tag to generate URLs.
+The `LinkExtension` allows generation of URL using routes.
+The extension provides the `n:href` n:attribute and `link` tag to generate URLs.
 It is enabled if the DI container contains a `Yiisoft\Router\UrlGeneratorInterface` implementation.
 
 #### n:href Attribute
@@ -245,6 +231,61 @@ The `{link}` tag is used to print a URL;
 its parameters are the same as `Yiisoft\Router\UrlGeneratorInterface::generate().
 ```latte
 {link route/name, arguments, queryParameters}
+```
+
+### UseExtension
+The `UseExtension` emulates PHP's `use` operator and allows writing cleaner templates.
+The extension provides provides the `use` tag.
+It is always enabled.
+
+By default, Latte templates require the use of Fully Qualified CLass Names (FQCN); this can lead to cluttered templates.
+The `use` tag emulates PHP's `use` operator and allows templates to define the FQCN and optionally an alias,
+and refer to the _used_ class by the alias or base class name.
+
+#### Using Namespaced Classes in Latte
+```latte
+$namespacedClass = new Framework\Module\NamespacedClass();
+$namespacedConstant = Framework\Module\NamespacedClass::CONSTANT;
+```
+
+The extension replaces the _used_ alias or base class name with the FQCN in the cached template;
+it _does not_ import or alias the class.
+
+#### {use} Tag
+```latte
+{use Framework\Module\NamespacedClass}
+
+$namespacedClass = new NamespacedClass();
+$namespacedConstant = NamespacedClass::CONSTANT;
+```
+
+#### {use} Tag with Alias
+```latte
+{use Framework\Module\Aliased\NamespacedClass AliasedClass}
+
+$aliasedClass = new AliasedClass();
+$aliasedConstant = AliasedClass::CONSTANT;
+```
+
+#### Multiple {use} Tags
+```latte
+{use Framework\Module\Aliased\NamespacedClass AliasedClass}
+{use Framework\Module\NamespacedClass}
+
+$aliasedClass = new AliasedClass();
+$aliasedConstant = AliasedClass::CONSTANT;
+$namespacedClass = new NamespacedClass();
+$namespacedConstant = NamespacedClass::CONSTANT;
+```
+
+### YiiLatteExtension
+The `YiiLatteExtension` allows access to any package in the DI container.
+The extension provides the `get` function which takes the id of the required package as a parameter.
+It is always enabled.
+
+#### get() Function
+```latte
+{do $package = get('PackageId')}
 ```
 
 ## Other Extensions
