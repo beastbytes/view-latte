@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 use BeastBytes\View\Latte\Extensions\Cache\CacheExtension;
 use BeastBytes\View\Latte\Extensions\Link\LinkExtension;
+use BeastBytes\View\Latte\Extensions\Use\UseExtension;
 use BeastBytes\View\Latte\Extensions\YiiLatte\YiiLatteExtension;
 use BeastBytes\View\Latte\LatteFactory;
 use BeastBytes\View\Latte\ViewRenderer;
@@ -22,6 +23,7 @@ use Yiisoft\View\WebView;
 return [
     Latte::class => static function (ContainerInterface $container) use ($params): Latte {
         $extensions = $params['beastbytes/view-latte']['extensions'];
+        $extensions[] = new UseExtension();
         $extensions[] = new YiiLatteExtension($container);
 
         if ($container->has(TranslatorInterface::class)) {
@@ -34,7 +36,7 @@ return [
             $extensions[] = new LinkExtension($container->get(UrlGeneratorInterface::class));
         }
 
-        if ($this->container->has(CacheInterface::class)) {
+        if ($container->has(CacheInterface::class)) {
             $extensions[] = new CacheExtension($container->get(CacheInterface::class));
         }
 
