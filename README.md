@@ -128,7 +128,6 @@ in all view templates and layouts.
 ```
 
 And a view template will be:
-
 ```latte
 {varType App\ApplicationParameters $applicationParameters}
 {varType Yiisoft\View\WebView $view}
@@ -153,13 +152,20 @@ And a view template will be:
 The `view-latte` package contains the following extensions:
 
 ### CacheExtension
+**NOTE: CacheExtension is not implemented yet**
+
 The `CacheExtension` allows caching of view fragments and dynamic content within cached fragments.
 The extension provides the `cache` and `dynamic` tags.
 It is enabled if the DI container contains a `Yiisoft\Cache\CacheInterface` implementation.
 
+**NOTE:** Templates using caching _must_ have the variable `$cache`,
+a concrete instance of  `Yiisoft\Cache\CacheInterface`, defined
+```latte
+{varType Yiisoft\Cache\CacheInterface $cache}
+```
+
 #### {cache} Tag
 The `cache` tag allows a template or part of a template to be cached. The tag has three parameters:
-
 * ttl (int) &ndash; The TTL of the cached content in seconds. Default is `60`.
 * dependency (Yiisoft\Cache\Dependency\Dependency|null) &ndash; The dependency of the cached content. 
 Default is `null`.
@@ -192,7 +198,6 @@ content to be cached
 
 #### {dynamic} Tag
 The `dynamic` tag defines dynamic content within a `cache` tag. The tag has three parameters:
-
 * contentGenerator (callable) &ndash; a callable that generates the dynamic content;
 it has the signature `function (array $parameters = []): string;`
 * parameters (array) &ndash; parameters as key=>value pairs passed to contentGenerator
