@@ -248,8 +248,15 @@ The `use` tag emulates PHP's `use` operator and allows templates to define the F
 and refer to the _used_ class by the alias or base class name.
 
 #### Using Namespaced Classes in Latte
-The extension replaces the alias or base class name in the `use` tag with the FQCN in the cached template;
-it _does not_ import or alias the class.
+The FQCN must be defined in a `use` tag before the base class name or alias is referenced in the template.
+The best way to ensure this is to place `use` tags at the start of the template.
+
+The extension replaces the alias or base class name defined in the `use` tag with the FQCN in class instantation (`new`)
+statements and class constants during compilation; it _does not_ import or alias the class.
+
+#### Differences from PHP
+* There is no `as` clause when defining an alias
+* Group `use` definitions are _not_ supported.
 
 #### {use} Tag
 ```latte
@@ -260,11 +267,10 @@ it _does not_ import or alias the class.
 ```
 
 #### {use} Tag with Alias
-To specify an alias, put the alias after the FQCN; unlike PHP, there is no _as_ clause.
 ```latte
 {use Framework\Module\Aliased\NamespacedClass AliasedClass}
 
-<p>The value is {(new AliasedClass())->getValue()}</p>
+<p>The value is {(new AliasedClass)->getValue()}</p>
 <p>The constant is {AliasedClass::CONSTANT}</p>
 ```
 
@@ -273,9 +279,10 @@ To specify an alias, put the alias after the FQCN; unlike PHP, there is no _as_ 
 {use Framework\Module\Aliased\NamespacedClass AliasedClass}
 {use Framework\Module\NamespacedClass}
 
+{varType int $arg}
 {varType string $testString}
 
-<p>The value is {(new NamespacedClass())->getValue()}</p>
+<p>The value is {(new NamespacedClass($arg))->getValue()}</p>
 <p>The constant is {NamespacedClass::CONSTANT}</p>
 <p>{$testString|replace: AliasedClass::CONSTANT}</p>
 ```
@@ -314,7 +321,7 @@ return [
 ```
 
 ## User Defined Filters and Functions
-The `view-latte` package supports the addition of user defined filters and functions to the Latte Engine;
+The `view-latte` package supports the addition of user-defined filters and functions to the Latte Engine;
 see [Configuration -> Params](#params) for details on how to specify them. This section details how to define them.
 
 Each filter and/or function is defined in its own class. Filters must implement the FilterProviderinterface

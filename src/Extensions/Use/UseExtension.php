@@ -27,32 +27,11 @@ final class UseExtension extends Extension
     public function getPasses(): array
     {
         return [
-            'applyUseTags' => self::order($this->applyUseTags(...), after: 'parseUseTags'),
-            'parseUseTags' => self::order($this->parseUseTags(...), before: '*'),
+            'useTagPass' => self::order($this->useTagPass(...), before: '*'),
         ];
     }
 
-    public function applyUseTags(TemplateNode $templateNode): void
-    {
-        $resolved = array_keys($this->use);
-
-        (new NodeTraverser)->traverse(
-            $templateNode,
-            enter: function (Node $node) use ($resolved): void {
-                if (
-                    (
-                        $node instanceof NewNode
-                        || $node instanceof ClassConstantFetchNode
-                    )
-                    && in_array($node->class->name, $resolved, true)
-                ) {
-                    $node->class->name = $this->use[$node->class->name];
-                }
-            }
-        );
-    }
-
-    public function parseUseTags(TemplateNode $templateNode): void
+    public function useTagPass(TemplateNode $templateNode): void
     {
         (new NodeTraverser)->traverse(
             $templateNode,
@@ -67,6 +46,11 @@ final class UseExtension extends Extension
                     }
 
                     $this->use[$resolved] = $fqcn;
+                } elseif (
+                    ($node instanceof ClassConstantFetchNode || $node instanceof NewNode)
+                    && in_array($node->class->name, array_keys($this->use), true)
+                ) {
+                    $node->class->name = $this->use[$node->class->name];
                 }
             },
         );
