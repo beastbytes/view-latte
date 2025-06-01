@@ -248,28 +248,24 @@ The `use` tag emulates PHP's `use` operator and allows templates to define the F
 and refer to the _used_ class by the alias or base class name.
 
 #### Using Namespaced Classes in Latte
-```latte
-$namespacedClass = new Framework\Module\NamespacedClass();
-$namespacedConstant = Framework\Module\NamespacedClass::CONSTANT;
-```
-
-The extension replaces the _used_ alias or base class name with the FQCN in the cached template;
+The extension replaces the alias or base class name in the `use` tag with the FQCN in the cached template;
 it _does not_ import or alias the class.
 
 #### {use} Tag
 ```latte
 {use Framework\Module\NamespacedClass}
 
-$namespacedClass = new NamespacedClass();
-$namespacedConstant = NamespacedClass::CONSTANT;
+<p>The value is {(new NamespacedClass)->getValue()}</p>
+<p>The constant is {NamespacedClass::CONSTANT}</p>
 ```
 
 #### {use} Tag with Alias
+To specify an alias, put the alias after the FQCN; unlike PHP, there is no _as_ clause.
 ```latte
 {use Framework\Module\Aliased\NamespacedClass AliasedClass}
 
-$aliasedClass = new AliasedClass();
-$aliasedConstant = AliasedClass::CONSTANT;
+<p>The value is {(new AliasedClass())->getValue()}</p>
+<p>The constant is {AliasedClass::CONSTANT}</p>
 ```
 
 #### Multiple {use} Tags
@@ -277,10 +273,11 @@ $aliasedConstant = AliasedClass::CONSTANT;
 {use Framework\Module\Aliased\NamespacedClass AliasedClass}
 {use Framework\Module\NamespacedClass}
 
-$aliasedClass = new AliasedClass();
-$aliasedConstant = AliasedClass::CONSTANT;
-$namespacedClass = new NamespacedClass();
-$namespacedConstant = NamespacedClass::CONSTANT;
+{varType string $testString}
+
+<p>The value is {(new NamespacedClass())->getValue()}</p>
+<p>The constant is {NamespacedClass::CONSTANT}</p>
+<p>{$testString|replace: AliasedClass::CONSTANT}</p>
 ```
 
 ### YiiLatteExtension
