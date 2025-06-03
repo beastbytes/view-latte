@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 use BeastBytes\View\Latte\Extensions\Cache\CacheExtension;
-use BeastBytes\View\Latte\Extensions\Link\LinkExtension;
+use BeastBytes\View\Latte\Extensions\Url\UrlExtension;
 use BeastBytes\View\Latte\Extensions\Use\UseExtension;
 use BeastBytes\View\Latte\Extensions\YiiLatte\YiiLatteExtension;
 use BeastBytes\View\Latte\LatteFactory;
@@ -33,7 +33,7 @@ return [
         }
 
         if ($container->has(UrlGeneratorInterface::class)) {
-            $extensions[] = new LinkExtension($container->get(UrlGeneratorInterface::class));
+            $extensions[] = new UrlExtension($container->get(UrlGeneratorInterface::class));
         }
 
         if ($container->has(CacheInterface::class)) {

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace BeastBytes\View\Latte\Tests\Extensions;
 
-use BeastBytes\View\Latte\Extensions\Link\LinkExtension;
+use BeastBytes\View\Latte\Extensions\Url\UrlExtension;
 use BeastBytes\View\Latte\Tests\TestCase;
 use Generator;
 use HttpSoft\Message\Uri;
@@ -18,7 +18,7 @@ use Yiisoft\Router\RouteCollection;
 use Yiisoft\Router\RouteCollector;
 use Yiisoft\Router\UrlGeneratorInterface;
 
-final class LinkExtensionTest extends TestCase
+final class UrlExtensionTest extends TestCase
 {
     private const URL = 'https://example.com';
 
@@ -54,7 +54,7 @@ final class LinkExtensionTest extends TestCase
 
         self::$urlGenerator = new UrlGenerator(self::$routeCollection, $currentRoute);
 
-        self::$extensions[] = new LinkExtension(self::$urlGenerator);
+        self::$extensions[] = new UrlExtension(self::$urlGenerator);
         parent::beforeClass();
     }
 
@@ -79,6 +79,18 @@ final class LinkExtensionTest extends TestCase
             self::$urlGenerator->generate($name, $arguments)
         );
         $template = '<a n:href="%s, [%s]">Test</a>';
+        $this->assert($expected, $template, $name, $arguments);
+    }
+
+    #[Test]
+    #[DataProvider('routeProvider')]
+    public function n_src_attribute(string $name, array $arguments): void
+    {
+        $expected = sprintf(
+            '<img src="%s"/>',
+            self::$urlGenerator->generate($name, $arguments)
+        );
+        $template = '<img n:src="%s, [%s]"/>';
         $this->assert($expected, $template, $name, $arguments);
     }
 

@@ -8,6 +8,7 @@
                 <LatteTagSettings AllowedModifiers="true" Arguments="string $name, array $arguments, array $queryParameters" DeprecatedMessage="" MacroName="link" />
                 <LatteTagSettings AllowedModifiers="true" Arguments="string $name, array $arguments, array $queryParameters" DeprecatedMessage="" MacroName="n:action" MacroType="ATTR_ONLY" />
                 <LatteTagSettings AllowedModifiers="true" Arguments="string $name, array $arguments, array $queryParameters" DeprecatedMessage="" MacroName="n:href" MacroType="ATTR_ONLY" />
+                <LatteTagSettings AllowedModifiers="true" Arguments="string $name, array $arguments, array $queryParameters" DeprecatedMessage="" MacroName="n:src" MacroType="ATTR_ONLY" />
             </list>
         </customMacroSettings>
     </component>

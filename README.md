@@ -207,21 +207,17 @@ it has the signature `function (array $parameters = []): string;`
 
 There is no limit to the number of `dynamic` tags within a `cache` tag.
 
-### LinkExtension
-The `LinkExtension` allows generation of URL using routes.
-The extension provides the `n:href` n:attribute and `link` tag to generate URLs.
+### UrlExtension
+The `UrlExtension` allows generation of URL using routes.
+The extension provides the `n:action`, `n:href`, and `n:src` n:attributes and `link` tag to generate URLs.
 It is enabled if the DI container contains a `Yiisoft\Router\UrlGeneratorInterface` implementation.
 
-#### n:href Attribute
-The `n:href` attribute is used to generate URLs in `<a/>` tags;
-its parameters are the same as `Yiisoft\Router\UrlGeneratorInterface::generate().
-```latte
-<a n:href="route/name, arguments, queryParameters">Content</a>
-```
+#### n:attributes
+The `n:action`, `n:href`, and `n:src` n:attributes are used to generate URLs as attributes in HTML tags;
+their parameters are the same as `Yiisoft\Router\UrlGeneratorInterface::generate().
 
-#### n:action Attribute
-The `n:action` attribute is used to generate the action URL in `<form/>` tags;
-its parameters are the same as `Yiisoft\Router\UrlGeneratorInterface::generate().
+##### n:action Attribute
+The `n:action` attribute is used to generate the action URL in `<form/>` tags.
 ```latte
 <form n:action="route/name, arguments, queryParameters">
     // Form controls
@@ -230,6 +226,18 @@ its parameters are the same as `Yiisoft\Router\UrlGeneratorInterface::generate()
 
 **Tip** The [form-latte extension](https://github.com/beastbytes/form-latte) 
 integrates the Yii Framework Form package with view-latte.
+
+##### n:href Attribute
+The `n:href` attribute is used to generate links in `<a/>` tags;
+```latte
+<a n:href="route/name, arguments, queryParameters">Content</a>
+```
+
+##### n:src Attribute
+The `n:src` attribute is used to generate URLs to the media source in media tags, e.g. `<img/>`;
+```latte
+<img n:src="route/name, arguments, queryParameters"/>
+```
 
 #### {link} Tag
 The `{link}` tag is used to print a URL;

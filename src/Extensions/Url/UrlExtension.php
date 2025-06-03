@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace BeastBytes\View\Latte\Extensions\Link;
+namespace BeastBytes\View\Latte\Extensions\Url;
 
 use Latte\Compiler\NodeHelpers;
 use Latte\Compiler\Tag;
@@ -11,7 +11,7 @@ use Latte\Essential\Nodes\PrintNode;
 use Latte\Extension;
 use Yiisoft\Router\UrlGeneratorInterface;
 
-final class LinkExtension extends Extension
+final class UrlExtension extends Extension
 {
     public function __construct(private readonly UrlGeneratorInterface $urlGenerator)
     {
@@ -20,13 +20,15 @@ final class LinkExtension extends Extension
     public function getTags(): array
     {
         return [
-            'n:action' => [$this, 'parseLink'],
-            'n:href' => [$this, 'parseLink'],
-            'link' => [$this, 'parseLink'],
+            'n:action' => [$this, 'parseUrl'],
+            'n:href' => [$this, 'parseUrl'],
+            'n:src' => [$this, 'parseUrl'],
+            'n:srcset' => [$this, 'parseUrl'],
+            'link' => [$this, 'parseUrl'],
         ];
     }
 
-    public function parseLink(Tag $tag): PrintNode
+    public function parseUrl(Tag $tag): PrintNode
     {
         $tag->outputMode = $tag::OutputKeepIndentation;
         $tag->expectArguments();
