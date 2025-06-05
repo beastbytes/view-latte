@@ -36,9 +36,11 @@ return [
             $extensions[] = new UrlExtension($container->get(UrlGeneratorInterface::class));
         }
 
+        /*
         if ($container->has(CacheInterface::class)) {
             $extensions[] = new CacheExtension($container->get(CacheInterface::class));
         }
+        */
 
         $latte = (new LatteFactory(
             (string) $container
