@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
+use BeastBytes\Latte\Extensions\Use\UseExtension;
 use BeastBytes\View\Latte\Extensions\Cache\CacheExtension;
 use BeastBytes\View\Latte\Extensions\Url\UrlExtension;
-use BeastBytes\View\Latte\Extensions\Use\UseExtension;
 use BeastBytes\View\Latte\Extensions\YiiLatte\YiiLatteExtension;
 use BeastBytes\View\Latte\LatteFactory;
 use BeastBytes\View\Latte\ViewRenderer;

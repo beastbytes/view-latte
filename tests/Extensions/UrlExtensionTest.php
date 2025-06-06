@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace BeastBytes\View\Latte\Tests\Extensions;
 
 use BeastBytes\View\Latte\Extensions\Url\UrlExtension;
+use BeastBytes\View\Latte\Tests\Support\RouteEnum;
 use BeastBytes\View\Latte\Tests\TestCase;
 use Generator;
 use HttpSoft\Message\Uri;
@@ -30,19 +31,19 @@ final class UrlExtensionTest extends TestCase
     {
         $routes = [
             Route::get('/test/item')
-                ->name('item-index')
+                ->name('item_index')
                 ->action(fn() => null)
             ,
             Route::get('/test/item/create')
-                ->name('item-create')
+                ->name('item_create')
                 ->action(fn() => null)
             ,
             Route::get('/test/item/update/{id:\d+}')
-                ->name('item-update')
+                ->name('item_update')
                 ->action(fn() => null)
             ,
             Route::get('/test/item/{id:\d+}')
-                ->name('item-view')
+                ->name('item_view')
                 ->action(fn() => null)
             ,
         ];
@@ -106,19 +107,19 @@ final class UrlExtensionTest extends TestCase
     public static function routeProvider(): Generator
     {
         yield [
-            'name' => 'item-index',
+            'name' => 'item_index',
             'arguments' => [],
         ];
         yield [
-            'name' => 'item-create',
+            'name' => 'item_create',
             'arguments' => [],
         ];
         yield [
-            'name' => 'item-update',
+            'name' => 'item_update',
             'arguments' => ['id' => '69'],
         ];
         yield [
-            'name' => 'item-view',
+            'name' => 'item_view',
             'arguments' => ['id' => '69'],
         ];
     }
