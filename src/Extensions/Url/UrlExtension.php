@@ -4,9 +4,17 @@ declare(strict_types=1);
 
 namespace BeastBytes\View\Latte\Extensions\Url;
 
+use Latte\CompileException;
 use Latte\Compiler\NodeHelpers;
+use Latte\Compiler\Nodes\Php\Expression\ArrayNode;
+use Latte\Compiler\Nodes\Php\Expression\ClassConstantFetchNode;
+use Latte\Compiler\Nodes\Php\Expression\ConstantFetchNode;
+use Latte\Compiler\Nodes\Php\Expression\MethodCallNode;
+use Latte\Compiler\Nodes\Php\Expression\VariableNode;
+use Latte\Compiler\Nodes\Php\ExpressionNode;
+use Latte\Compiler\Nodes\Php\Scalar\StringNode;
+use Latte\Compiler\PrintContext;
 use Latte\Compiler\Tag;
-use Latte\Compiler\Nodes\Php;
 use Latte\Essential\Nodes\PrintNode;
 use Latte\Extension;
 use Yiisoft\Router\UrlGeneratorInterface;
@@ -34,31 +42,49 @@ final class UrlExtension extends Extension
         $tag->expectArguments();
         $node = new PrintNode;
         $node->expression = $tag->parser->parseUnquotedStringOrExpression();
-        $args = new Php\Expression\ArrayNode;
+        $arguments = new ArrayNode;
         if ($tag->parser->stream->tryConsume(',')) {
-            $args = $tag->parser->parseArguments();
+            $arguments = $tag->parser->parseArguments();
         }
 
         $node->modifier = $tag->parser->parseModifier();
         $node->modifier->escape = false;
 
-        $expr = self::toValue($node->expression);
-        $values = self::toValue($args);
+        $routeName = $this->getRouteName($node->expression);
+        $routeArguments = $this->getRouteArguments($arguments);
 
         if ($tag->isNAttribute()) {
-            $url = ' ' . $tag->name . '="' . $this->urlGenerator->generate($expr, ...$values) . '"';
+            $url = ' ' . $tag->name . '="' . $this->urlGenerator->generate($routeName, ...$routeArguments) . '"';
         } else {
-            $url = $this->urlGenerator->generateAbsolute($expr, ...$values);
+            $url = $this->urlGenerator->generateAbsolute($routeName, ...$routeArguments);
         }
 
-        $node->expression = new Php\Scalar\StringNode($url);
+        $node->expression = new StringNode($url);
         return $node;
     }
 
-    public static function toValue($args): mixed
+    private function getRouteName(ExpressionNode $node): string
+    {
+        if ($node instanceof StringNode) {
+            return NodeHelpers::toValue($node, constants: true);
+        } elseif (
+            $node instanceof MethodCallNode
+            || $node instanceof ClassConstantFetchNode
+            || $node instanceof ConstantFetchNode
+        ) {
+            $expression = $node->print(new PrintContext());
+            return eval("return $expression;");
+        } elseif ($node instanceof VariableNode) {
+            throw new CompileException($node::class . ' not implemented');
+        } else {
+            throw new CompileException($node::class . ' not implemented');
+        }
+    }
+
+    private function getRouteArguments(ArrayNode $arguments): mixed
     {
         try {
-            return NodeHelpers::toValue($args, constants: true);
+            return NodeHelpers::toValue($arguments, constants: true);
         } catch (\InvalidArgumentException) {
             return null;
         }

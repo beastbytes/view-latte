@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace BeastBytes\View\Latte\Tests\Extensions;
 
 use BeastBytes\View\Latte\Extensions\Url\UrlExtension;
+use BeastBytes\View\Latte\Tests\Support\RouteConst;
 use BeastBytes\View\Latte\Tests\Support\RouteEnum;
 use BeastBytes\View\Latte\Tests\TestCase;
 use Generator;
@@ -84,15 +85,63 @@ final class UrlExtensionTest extends TestCase
     }
 
     #[Test]
-    #[DataProvider('routeProvider')]
-    public function n_src_attribute(string $name, array $arguments): void
+    public function n_href_attribute_expression(): void
     {
         $expected = sprintf(
-            '<img src="%s"/>',
-            self::$urlGenerator->generate($name, $arguments)
+            '<a href="%s">Test</a>',
+            self::$urlGenerator->generate(RouteEnum::create->getName(RouteEnum::PREFIX))
         );
-        $template = '<img n:src="%s, [%s]"/>';
-        $this->assert($expected, $template, $name, $arguments);
+        $template = '<a n:href="\\BeastBytes\\View\\Latte\\Tests\\Support\\RouteEnum::create->getName(\\BeastBytes\\View\\Latte\\Tests\\Support\\RouteEnum::PREFIX), []">Test</a>';
+        $templateFile = self::LATTE_TEMPLATE_DIR . DIRECTORY_SEPARATOR . '_' . md5($template) . '.latte';
+        file_put_contents($templateFile, $template);
+        $actual = self::$latte->renderToString($templateFile);
+        $this->assertSame($expected, $actual);
+
+        $expected = sprintf(
+            '<a href="%s">Test</a>',
+            self::$urlGenerator->generate(RouteEnum::view->getName(RouteEnum::PREFIX), ['id' => '69'])
+        );
+        $template = '<a n:href="\\BeastBytes\\View\\Latte\\Tests\\Support\\RouteEnum::view->getName(\\BeastBytes\\View\\Latte\\Tests\\Support\\RouteEnum::PREFIX), [\'id\' => \'69\']">Test</a>';
+        $templateFile = self::LATTE_TEMPLATE_DIR . DIRECTORY_SEPARATOR . '_' . md5($template) . '.latte';
+        file_put_contents($templateFile, $template);
+        $actual = self::$latte->renderToString($templateFile);
+        $this->assertSame($expected, $actual);
+    }
+
+    #[Test]
+    public function n_href_attribute_constant(): void
+    {
+        $expected = sprintf(
+            '<a href="%s">Test</a>',
+            self::$urlGenerator->generate(RouteConst::CREATE)
+        );
+        $template = '<a n:href="\\BeastBytes\\View\\Latte\\Tests\\Support\\RouteConst::CREATE">Test</a>';
+        $templateFile = self::LATTE_TEMPLATE_DIR . DIRECTORY_SEPARATOR . '_' . md5($template) . '.latte';
+        file_put_contents($templateFile, $template);
+        $actual = self::$latte->renderToString($templateFile);
+        $this->assertSame($expected, $actual);
+    }
+
+    #[Test]
+    public function n_href_attribute_variable(): void
+    {
+        $routeName = RouteEnum::create->getName(RouteEnum::PREFIX);
+        $expected = sprintf(
+            '<a href="%s">Test</a>',
+            self::$urlGenerator->generate($routeName)
+        );
+        $template = sprintf(
+            <<<'Template'
+                {var string $routeName = ''}
+                {do $routeName = %s}
+                <a n:href="$routeName">Test</a>
+                Template,
+            $routeName
+        );
+        $templateFile = self::LATTE_TEMPLATE_DIR . DIRECTORY_SEPARATOR . '_' . md5($template) . '.latte';
+        file_put_contents($templateFile, $template);
+        $actual = self::$latte->renderToString($templateFile);
+        $this->assertSame($expected, $actual);
     }
 
     #[Test]
