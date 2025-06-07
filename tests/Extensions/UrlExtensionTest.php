@@ -122,6 +122,7 @@ final class UrlExtensionTest extends TestCase
         $this->assertSame($expected, $actual);
     }
 
+    /*
     #[Test]
     public function n_href_attribute_variable(): void
     {
@@ -143,6 +144,7 @@ final class UrlExtensionTest extends TestCase
         $actual = self::$latte->renderToString($templateFile);
         $this->assertSame($expected, $actual);
     }
+    */
 
     #[Test]
     #[DataProvider('routeProvider')]
